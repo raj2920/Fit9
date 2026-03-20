@@ -24,7 +24,7 @@
       scroll-behavior: smooth;
     }
 
-    /* ---------- BACKGROUND with bodybuilder images (overlay + multi-image slideshow) ---------- */
+    /* ---------- BACKGROUND with bodybuilder images ---------- */
     .bg-slideshow {
       position: fixed;
       top: 0;
@@ -42,7 +42,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.75); /* dark overlay for readability */
+      background: rgba(0, 0, 0, 0.75);
       backdrop-filter: brightness(0.85) blur(1px);
       z-index: 1;
     }
@@ -60,7 +60,6 @@
       animation: fadeAnimation 24s infinite;
     }
 
-    /* bodybuilder-focused images (diverse strong athletes) */
     .slide-1 { background-image: url('https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 20%; }
     .slide-2 { background-image: url('https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 35%; }
     .slide-3 { background-image: url('https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 25%; }
@@ -81,7 +80,7 @@
       100% { opacity: 0; }
     }
 
-    /* main content container - overlay above background */
+    /* main content container */
     .container {
       max-width: 1300px;
       margin: 0 auto;
@@ -185,6 +184,100 @@
       width: 45px;
       text-align: center;
     }
+    
+    /* EQUIPMENT GALLERY STYLES - Attractive equipment images */
+    .equipment-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .equipment-card {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 153, 0, 0.3);
+      cursor: pointer;
+    }
+    .equipment-card:hover {
+      transform: scale(1.03);
+      border-color: #ff9800;
+      box-shadow: 0 15px 30px rgba(255, 153, 0, 0.2);
+    }
+    .equipment-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .equipment-card:hover .equipment-img {
+      transform: scale(1.05);
+    }
+    .equipment-info {
+      padding: 1rem;
+      text-align: center;
+    }
+    .equipment-info h4 {
+      color: #ff9800;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+    .equipment-info p {
+      font-size: 0.85rem;
+      color: #ddd;
+    }
+    
+    /* DUMBBELL SPOTLIGHT SECTION */
+    .dumbbell-spotlight {
+      background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+      border-radius: 1.8rem;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .dumbbell-img-container {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+    .dumbbell-img-container img {
+      max-width: 100%;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .dumbbell-img-container img:hover {
+      transform: scale(1.02);
+    }
+    .dumbbell-text {
+      flex: 1;
+      min-width: 200px;
+    }
+    .dumbbell-text h3 {
+      color: #ff9800;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .dumbbell-text ul {
+      list-style: none;
+      padding: 0;
+    }
+    .dumbbell-text li {
+      margin: 0.6rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .dumbbell-text li i {
+      color: #ff9800;
+      font-size: 1.2rem;
+    }
+    
     .info-block {
       display: flex;
       flex-wrap: wrap;
@@ -229,6 +322,7 @@
       font-weight: bold;
       margin-top: 0.5rem;
       transition: 0.2s;
+      text-decoration: none;
     }
     .btn-wa i {
       margin-right: 8px;
@@ -253,6 +347,9 @@
       }
       .card {
         padding: 1.2rem;
+      }
+      .equipment-img {
+        height: 180px;
       }
     }
     hr {
@@ -321,6 +418,76 @@
     </div>
   </div>
 
+  <!-- ========== NEW EQUIPMENT GALLERY SECTION - Attractive Equipment & Dumbbell Images ========== -->
+  <div class="card">
+    <div class="section-title"><i class="fas fa-microphone-alt"></i> Premium Equipment</div>
+    <p style="margin-bottom: 1.2rem; opacity: 0.9;">Top-of-the-line machines, free weights & cardio gear to fuel your transformation 💪</p>
+    
+    <!-- Equipment Gallery Grid with high-quality images -->
+    <div class="equipment-gallery">
+      <div class="equipment-card">
+        <img class="equipment-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Professional Dumbbells Rack">
+        <div class="equipment-info">
+          <h4><i class="fas fa-dumbbell"></i> Premium Dumbbells</h4>
+          <p>2kg to 50kg | Chrome Plated | Non-slip grip</p>
+        </div>
+      </div>
+      <div class="equipment-card">
+        <img class="equipment-img" src="https://images.pexels.com/photos/260683/pexels-photo-260683.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Barbell Weight Lifting">
+        <div class="equipment-info">
+          <h4><i class="fas fa-weight-hanging"></i> Olympic Barbells</h4>
+          <p>20kg bars | 7ft & 6ft options | Heavy duty</p>
+        </div>
+      </div>
+      <div class="equipment-card">
+        <img class="equipment-img" src="https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Leg Press Machine">
+        <div class="equipment-info">
+          <h4><i class="fas fa-cogs"></i> Leg Press Machine</h4>
+          <p>Plate-loaded | Quad & hamstring focus</p>
+        </div>
+      </div>
+      <div class="equipment-card">
+        <img class="equipment-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Treadmill Cardio">
+        <div class="equipment-info">
+          <h4><i class="fas fa-heartbeat"></i> Advanced Treadmills</h4>
+          <p>HD touchscreen | Incline up to 15%</p>
+        </div>
+      </div>
+      <div class="equipment-card">
+        <img class="equipment-img" src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cable Crossover Machine">
+        <div class="equipment-info">
+          <h4><i class="fas fa-exchange-alt"></i> Cable Crossover</h4>
+          <p>Dual adjustable pulleys | Full body workouts</p>
+        </div>
+      </div>
+      <div class="equipment-card">
+        <img class="equipment-img" src="https://images.pexels.com/photos/3757954/pexels-photo-3757954.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kettlebells">
+        <div class="equipment-info">
+          <h4><i class="fas fa-fist-raised"></i> Kettlebells</h4>
+          <p>4kg to 32kg | Cast iron | Perfect for swings & snatches</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dumbbell Spotlight Section - Attractive Dumbbell Focus -->
+    <div class="dumbbell-spotlight" style="margin-top: 2rem;">
+      <div class="dumbbell-img-container">
+        <img src="https://images.pexels.com/photos/260352/pexels-photo-260352.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Heavy Dumbbells Rack Display">
+      </div>
+      <div class="dumbbell-text">
+        <h3><i class="fas fa-dumbbell"></i> Ultimate Dumbbell Zone</h3>
+        <p>Our gym features a dedicated free weights area with the finest dumbbell collection in Saket. Perfect for:</p>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Bicep curls & Tricep extensions</li>
+          <li><i class="fas fa-check-circle"></i> Shoulder presses & Lateral raises</li>
+          <li><i class="fas fa-check-circle"></i> Dumbbell rows & Chest flyes</li>
+          <li><i class="fas fa-check-circle"></i> Progressive overload from 2kg to 50kg</li>
+        </ul>
+        <a href="#join" class="cta-btn" style="margin-top: 1rem; display: inline-block;"><i class="fas fa-camera"></i> See the gear in person</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Our Services Section -->
   <div class="card">
     <div class="section-title"><i class="fas fa-dumbbell"></i> Our Services</div>
@@ -376,27 +543,27 @@
     </div>
   </div>
 
-  <!-- extra motivation / quote with bodybuilder vibe -->
+  <!-- Motivation Quote + Equipment Highlights -->
   <div class="card" style="text-align: center; background: rgba(0,0,0,0.65);">
     <i class="fas fa-quote-left" style="font-size: 2rem; color: #ff9800; opacity: 0.7;"></i>
     <p style="font-size: 1.2rem; font-style: italic; margin: 0.5rem 0;">“The only bad workout is the one that didn’t happen. Build muscle, build character, build life.”</p>
     <p>— Fit 9 Gym Family</p>
     <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-      <span><i class="fas fa-check-circle" style="color:#4caf50;"></i> 24/7 Support</span>
+      <span><i class="fas fa-dumbbell" style="color:#ff9800;"></i> 20+ Dumbbell Pairs</span>
+      <span><i class="fas fa-microphone-alt" style="color:#ff9800;"></i> Premium Machines</span>
       <span><i class="fas fa-check-circle" style="color:#4caf50;"></i> Free Trial Session</span>
-      <span><i class="fas fa-check-circle" style="color:#4caf50;"></i> Women Exclusive Hours</span>
+      <span><i class="fas fa-female" style="color:#ff9800;"></i> Women Exclusive Hours</span>
     </div>
   </div>
 
   <div class="footer">
     <p>© 2025 Fit 9 Gym — Transform Your Body, Transform Your Life. | Champa Gali, Saket, Delhi</p>
-    <p style="margin-top: 6px;"><i class="fas fa-shield-alt"></i> Empowering fitness journeys since 2019</p>
+    <p style="margin-top: 6px;"><i class="fas fa-dumbbell"></i> Premium Dumbbells | Racks | Machines | Cardio Zone</p>
   </div>
 </div>
 
-<!-- Optional simple script to handle dynamic year, just for freshness -->
 <script>
-  // just a tiny dynamic year and smooth scroll
+  // smooth scroll and dynamic year
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -408,7 +575,6 @@
       }
     });
   });
-  // add current year if needed (optional)
   const footerYear = document.querySelector('.footer p:first-child');
   if(footerYear) {
     footerYear.innerHTML = `© ${new Date().getFullYear()} Fit 9 Gym — Transform Your Body, Transform Your Life. | Champa Gali, Saket, Delhi`;
