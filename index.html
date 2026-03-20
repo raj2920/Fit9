@@ -24,7 +24,7 @@
       scroll-behavior: smooth;
     }
 
-    /* ========== HERO SECTION - BOLD GYM NAME & POWER QUOTES ========== */
+    /* ========== HERO SECTION - BOLD GYM NAME & POWER QUOTES WITH MALE/FEMALE BODYBUILDER BACKGROUND ========== */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -32,26 +32,55 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.7));
       overflow: hidden;
     }
 
-    .hero-bg-img {
+    /* Background slideshow with both male and female bodybuilder images */
+    .hero-bg-slideshow {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=1600');
-      background-size: cover;
-      background-position: center 30%;
       z-index: -2;
-      animation: slowZoom 20s ease-in-out infinite alternate;
+      overflow: hidden;
     }
 
-    @keyframes slowZoom {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.08); }
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      opacity: 0;
+      animation: heroFadeAnimation 20s infinite;
+    }
+
+    /* Male Bodybuilder Images */
+    .hero-slide-1 { background-image: url('https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 25%; }
+    .hero-slide-2 { background-image: url('https://images.pexels.com/photos/38630/bodybuilder-stronger-muscle-biceps-38630.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 35%; }
+    .hero-slide-3 { background-image: url('https://images.pexels.com/photos/260447/pexels-photo-260447.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 30%; }
+    /* Female Bodybuilder Images */
+    .hero-slide-4 { background-image: url('https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 40%; }
+    .hero-slide-5 { background-image: url('https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 35%; }
+    .hero-slide-6 { background-image: url('https://images.pexels.com/photos/3757954/pexels-photo-3757954.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 45%; }
+
+    .hero-slide-1 { animation-delay: 0s; }
+    .hero-slide-2 { animation-delay: 3.33s; }
+    .hero-slide-3 { animation-delay: 6.66s; }
+    .hero-slide-4 { animation-delay: 10s; }
+    .hero-slide-5 { animation-delay: 13.33s; }
+    .hero-slide-6 { animation-delay: 16.66s; }
+
+    @keyframes heroFadeAnimation {
+      0% { opacity: 0; transform: scale(1); }
+      8% { opacity: 1; transform: scale(1.02); }
+      20% { opacity: 1; transform: scale(1.02); }
+      28% { opacity: 0; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1); }
     }
 
     .hero-overlay {
@@ -60,7 +89,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.65);
       z-index: -1;
     }
 
@@ -443,16 +472,26 @@
 </head>
 <body>
 
-<!-- HERO SECTION - BOLD GYM NAME & POWER QUOTES -->
+<!-- ========== HERO SECTION - MALE & FEMALE BODYBUILDER BACKGROUND SLIDESHOW ========== -->
 <section class="hero">
-  <div class="hero-bg-img"></div>
+  <!-- Background slideshow with both male and female bodybuilder images -->
+  <div class="hero-bg-slideshow">
+    <div class="hero-slide hero-slide-1"></div>
+    <div class="hero-slide hero-slide-2"></div>
+    <div class="hero-slide hero-slide-3"></div>
+    <div class="hero-slide hero-slide-4"></div>
+    <div class="hero-slide hero-slide-5"></div>
+    <div class="hero-slide hero-slide-6"></div>
+  </div>
   <div class="hero-overlay"></div>
+  
   <div class="hero-content">
     <div class="gym-name">
       FIT 9 GYM
       <span>💪</span>
     </div>
     
+    <!-- POWER QUOTES - Attractive and Motivating -->
     <div class="power-quotes">
       <div class="quote-main">
         <i class="fas fa-fire"></i> UNLEASH THE BEAST WITHIN <i class="fas fa-fire"></i>
@@ -465,6 +504,9 @@
       </div>
       <div class="quote-sub" style="margin-top: 1rem; font-weight: 600;">
         💯 TRANSFORM YOUR BODY · TRANSFORM YOUR LIFE 💯
+      </div>
+      <div class="quote-sub" style="margin-top: 0.8rem; font-size: 1rem;">
+        👨‍🦱 FOR MEN · 👩‍🦱 FOR WOMEN · 💪 FOR EVERYONE
       </div>
     </div>
     
@@ -577,7 +619,7 @@
     </div>
   </div>
 
-  <!-- EQUIPMENT GALLERY - Updated: Replaced Olympic Barbells with Cable Crossover Machine -->
+  <!-- EQUIPMENT GALLERY -->
   <div class="card" id="equipment">
     <div class="section-title"><i class="fas fa-dumbbell"></i> Premium Equipment</div>
     <p style="margin-bottom: 1.2rem;">State-of-the-art machines and free weights to fuel your transformation 💪</p>
@@ -593,21 +635,21 @@
         <img class="equipment-img" src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cable Crossover Machine">
         <div class="equipment-info">
           <h4><i class="fas fa-exchange-alt"></i> Cable Crossover Machine</h4>
-          <p>Dual adjustable pulleys | Full body workouts | Chest fly & cable exercises</p>
+          <p>Dual adjustable pulleys | Full body workouts</p>
         </div>
       </div>
       <div class="equipment-card">
         <img class="equipment-img" src="https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Leg Press Machine">
         <div class="equipment-info">
           <h4><i class="fas fa-cogs"></i> Leg Press Machine</h4>
-          <p>Plate-loaded | Quad & hamstring focus | Heavy duty</p>
+          <p>Plate-loaded | Quad & hamstring focus</p>
         </div>
       </div>
       <div class="equipment-card">
         <img class="equipment-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Treadmill">
         <div class="equipment-info">
           <h4><i class="fas fa-heartbeat"></i> Advanced Treadmills</h4>
-          <p>HD touchscreen | Incline up to 15% | Cardio zone</p>
+          <p>HD touchscreen | Incline up to 15%</p>
         </div>
       </div>
       <div class="equipment-card">
@@ -621,7 +663,7 @@
         <img class="equipment-img" src="https://images.pexels.com/photos/3757954/pexels-photo-3757954.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kettlebells">
         <div class="equipment-info">
           <h4><i class="fas fa-fist-raised"></i> Kettlebells</h4>
-          <p>4kg to 32kg | Cast iron | Perfect for swings & strength</p>
+          <p>4kg to 32kg | Cast iron | Perfect for swings</p>
         </div>
       </div>
     </div>
