@@ -185,7 +185,95 @@
       text-align: center;
     }
     
-    /* EQUIPMENT GALLERY STYLES - Attractive equipment images */
+    /* MEMBERSHIP PLANS - Attractive Pricing Cards */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+    .pricing-card {
+      background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,20,0.9));
+      border-radius: 1.8rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 153, 0, 0.3);
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: #ff9800;
+      box-shadow: 0 20px 35px rgba(255, 153, 0, 0.25);
+    }
+    .pricing-header {
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(255, 153, 0, 0.2), rgba(0,0,0,0.5));
+    }
+    .pricing-header h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ff9800;
+    }
+    .pricing-header .price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0.5rem 0;
+    }
+    .pricing-header .price span {
+      font-size: 1rem;
+      color: #aaa;
+    }
+    .pricing-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .pricing-features {
+      padding: 1.2rem;
+      text-align: left;
+    }
+    .pricing-features li {
+      list-style: none;
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .pricing-features li i {
+      color: #ff9800;
+      width: 22px;
+    }
+    .pricing-btn {
+      display: inline-block;
+      background: #ff9800;
+      color: #111;
+      padding: 0.7rem 1.5rem;
+      border-radius: 40px;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 1rem 0 1.2rem;
+      transition: 0.2s;
+    }
+    .pricing-btn:hover {
+      background: #ffb347;
+      transform: scale(1.02);
+    }
+    .badge {
+      display: inline-block;
+      background: #ff9800;
+      color: #111;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-left: 0.5rem;
+    }
+    
+    /* EQUIPMENT GALLERY STYLES */
     .equipment-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -351,10 +439,12 @@
       .equipment-img {
         height: 180px;
       }
-    }
-    hr {
-      border-color: rgba(255,255,255,0.1);
-      margin: 0.5rem 0;
+      .pricing-header h3 {
+        font-size: 1.4rem;
+      }
+      .pricing-header .price {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
@@ -379,7 +469,7 @@
     <div class="tagline-mobile">
       <i class="fas fa-dumbbell"></i> No pain, no gain
     </div>
-    <a href="#join" class="cta-btn"><i class="fas fa-user-plus"></i> Join Now</a>
+    <a href="#membership" class="cta-btn"><i class="fas fa-tags"></i> View Plans</a>
   </div>
 
   <!-- About Us Section -->
@@ -387,7 +477,7 @@
     <div>
       <span class="section-title"><i class="fas fa-info-circle"></i> About Us</span>
     </div>
-    <p style="font-size: 1.1rem; margin-top: 1rem; line-height: 1.6;">Welcome to <strong>Fit 9 Gym</strong>, your ultimate fitness destination for both men and women. We provide a motivating environment, modern equipment, and expert guidance to help you achieve your fitness goals—whether it’s weight loss, muscle gain, or overall wellness. Our community is built on discipline, support, and transformation.</p>
+    <p style="font-size: 1.1rem; margin-top: 1rem; line-height: 1.6;">Welcome to <strong>Fit 9 Gym</strong>, your ultimate fitness destination for both men and women. We provide a motivating environment, modern equipment, and expert guidance to help you achieve your fitness goals—whether it's weight loss, muscle gain, or overall wellness. Our community is built on discipline, support, and transformation.</p>
   </div>
 
   <!-- Location & Timings combined row -->
@@ -418,12 +508,88 @@
     </div>
   </div>
 
-  <!-- ========== NEW EQUIPMENT GALLERY SECTION - Attractive Equipment & Dumbbell Images ========== -->
+  <!-- ========== MEMBERSHIP PLANS SECTION with Attractive Pricing & Images ========== -->
+  <div class="card" id="membership">
+    <div class="section-title"><i class="fas fa-tags"></i> Membership Plans</div>
+    <p style="margin-bottom: 1.2rem;">Choose the perfect plan that fits your fitness journey. Affordable rates with premium facilities!</p>
+    
+    <div class="pricing-grid">
+      <!-- Monthly Plan - ₹2000 -->
+      <div class="pricing-card">
+        <img class="pricing-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monthly Membership">
+        <div class="pricing-header">
+          <h3>MONTHLY</h3>
+          <div class="price">₹2,000<span>/month</span></div>
+        </div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Full Gym Access</li>
+          <li><i class="fas fa-check-circle"></i> Cardio & Weight Training</li>
+          <li><i class="fas fa-check-circle"></i> Basic Guidance</li>
+          <li><i class="fas fa-check-circle"></i> Locker Facility</li>
+          <li><i class="fas fa-check-circle"></i> Flexible Timing</li>
+        </ul>
+        <a href="https://wa.me/919608520740?text=I'm%20interested%20in%20MONTHLY%20membership%20(₹2000)%20at%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
+      </div>
+      
+      <!-- Quarterly Plan - ₹4000 (3 months) -->
+      <div class="pricing-card">
+        <img class="pricing-img" src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quarterly Membership">
+        <div class="pricing-header">
+          <h3>QUARTERLY <span class="badge">SAVE 33%</span></h3>
+          <div class="price">₹4,000<span>/3 months</span></div>
+        </div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Everything in Monthly</li>
+          <li><i class="fas fa-check-circle"></i> 1 Free Personal Training Session</li>
+          <li><i class="fas fa-check-circle"></i> Body Composition Analysis</li>
+          <li><i class="fas fa-check-circle"></i> Priority Class Booking</li>
+          <li><i class="fas fa-check-circle"></i> Free Protein Shake (1x/month)</li>
+        </ul>
+        <a href="https://wa.me/919608520740?text=I'm%20interested%20in%20QUARTERLY%20membership%20(₹4000)%20at%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
+      </div>
+      
+      <!-- Half Yearly Plan - ₹6000 (6 months) -->
+      <div class="pricing-card">
+        <img class="pricing-img" src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Half Yearly Membership">
+        <div class="pricing-header">
+          <h3>HALF YEARLY <span class="badge">SAVE 50%</span></h3>
+          <div class="price">₹6,000<span>/6 months</span></div>
+        </div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Everything in Quarterly</li>
+          <li><i class="fas fa-check-circle"></i> 3 Free Personal Training Sessions</li>
+          <li><i class="fas fa-check-circle"></i> Diet Plan Consultation</li>
+          <li><i class="fas fa-check-circle"></i> Gym Merchandise (T-shirt)</li>
+          <li><i class="fas fa-check-circle"></i> Guest Pass (2 times)</li>
+        </ul>
+        <a href="https://wa.me/919608520740?text=I'm%20interested%20in%20HALF%20YEARLY%20membership%20(₹6000)%20at%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
+      </div>
+      
+      <!-- Yearly Plan - ₹10000 (12 months) Best Value -->
+      <div class="pricing-card">
+        <img class="pricing-img" src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yearly Membership">
+        <div class="pricing-header">
+          <h3>YEARLY <span class="badge">BEST VALUE</span></h3>
+          <div class="price">₹10,000<span>/year</span></div>
+          <small style="color:#ff9800;">Save ₹14,000 vs monthly</small>
+        </div>
+        <ul class="pricing-features">
+          <li><i class="fas fa-check-circle"></i> Everything in Half Yearly</li>
+          <li><i class="fas fa-check-circle"></i> Unlimited Personal Training (2x/week)</li>
+          <li><i class="fas fa-check-circle"></i> Free Gym Kit (Bag + Bottle)</li>
+          <li><i class="fas fa-check-circle"></i> Priority Support & Freeze Option</li>
+          <li><i class="fas fa-check-circle"></i> Complimentary Wellness Session</li>
+        </ul>
+        <a href="https://wa.me/919608520740?text=I'm%20interested%20in%20YEARLY%20membership%20(₹10000)%20at%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== EQUIPMENT GALLERY SECTION with Dumbbell & Equipment Images ========== -->
   <div class="card">
     <div class="section-title"><i class="fas fa-microphone-alt"></i> Premium Equipment</div>
     <p style="margin-bottom: 1.2rem; opacity: 0.9;">Top-of-the-line machines, free weights & cardio gear to fuel your transformation 💪</p>
     
-    <!-- Equipment Gallery Grid with high-quality images -->
     <div class="equipment-gallery">
       <div class="equipment-card">
         <img class="equipment-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Professional Dumbbells Rack">
@@ -453,23 +619,9 @@
           <p>HD touchscreen | Incline up to 15%</p>
         </div>
       </div>
-      <div class="equipment-card">
-        <img class="equipment-img" src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cable Crossover Machine">
-        <div class="equipment-info">
-          <h4><i class="fas fa-exchange-alt"></i> Cable Crossover</h4>
-          <p>Dual adjustable pulleys | Full body workouts</p>
-        </div>
-      </div>
-      <div class="equipment-card">
-        <img class="equipment-img" src="https://images.pexels.com/photos/3757954/pexels-photo-3757954.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kettlebells">
-        <div class="equipment-info">
-          <h4><i class="fas fa-fist-raised"></i> Kettlebells</h4>
-          <p>4kg to 32kg | Cast iron | Perfect for swings & snatches</p>
-        </div>
-      </div>
     </div>
 
-    <!-- Dumbbell Spotlight Section - Attractive Dumbbell Focus -->
+    <!-- Dumbbell Spotlight Section -->
     <div class="dumbbell-spotlight" style="margin-top: 2rem;">
       <div class="dumbbell-img-container">
         <img src="https://images.pexels.com/photos/260352/pexels-photo-260352.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Heavy Dumbbells Rack Display">
@@ -483,7 +635,7 @@
           <li><i class="fas fa-check-circle"></i> Dumbbell rows & Chest flyes</li>
           <li><i class="fas fa-check-circle"></i> Progressive overload from 2kg to 50kg</li>
         </ul>
-        <a href="#join" class="cta-btn" style="margin-top: 1rem; display: inline-block;"><i class="fas fa-camera"></i> See the gear in person</a>
+        <a href="#membership" class="cta-btn" style="margin-top: 1rem; display: inline-block;"><i class="fas fa-tags"></i> View Membership Plans</a>
       </div>
     </div>
   </div>
@@ -501,7 +653,7 @@
     </div>
   </div>
 
-  <!-- Why Choose Fit 9 + Highlights -->
+  <!-- Why Choose Fit 9 -->
   <div class="card">
     <div class="section-title"><i class="fas fa-star"></i> Why Choose Fit 9?</div>
     <div class="grid-2col" style="margin-top: 1rem;">
@@ -526,8 +678,8 @@
       <div class="info-detail">
         <i class="fas fa-phone-alt"></i>
         <h3>Call / WhatsApp</h3>
-        <p class="contact-links"><a href="tel:+919911100021">9911100021</a></p>
-        <a href="https://wa.me/919911100021?text=Hi%20Anjali%2C%20I%20want%20to%20join%20Fit%209%20Gym" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+        <p class="contact-links"><a href="tel:+919608520740">9608520740</a></p>
+        <a href="https://wa.me/919608520740?text=Hi%20Anjali%2C%20I%20want%20to%20join%20Fit%209%20Gym" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
       </div>
       <div class="info-detail">
         <i class="fas fa-envelope"></i>
@@ -539,14 +691,14 @@
     <div style="background: rgba(0,0,0,0.5); border-radius: 1.5rem; padding: 1.5rem; text-align: center; margin-top: 1rem;">
       <h2 style="font-weight: 800; font-size: 1.8rem;"><i class="fas fa-heart" style="color:#ff6666;"></i> Start Your Fitness Journey Today</h2>
       <p style="margin: 0.8rem 0;">Become the best version of yourself with <strong>Fit 9 Gym</strong>. Limited introductory offers!</p>
-      <a href="https://wa.me/919911100021?text=I'm%20interested%20in%20joining%20Fit%209%20Gym%20-%20please%20share%20membership%20details" class="cta-btn" style="background:#ff9800; padding: 0.8rem 2rem; font-size: 1rem;"><i class="fas fa-dumbbell"></i> Join Us Now</a>
+      <a href="#membership" class="cta-btn" style="background:#ff9800; padding: 0.8rem 2rem; font-size: 1rem;"><i class="fas fa-tags"></i> View Membership Plans</a>
     </div>
   </div>
 
-  <!-- Motivation Quote + Equipment Highlights -->
+  <!-- Motivation Quote -->
   <div class="card" style="text-align: center; background: rgba(0,0,0,0.65);">
     <i class="fas fa-quote-left" style="font-size: 2rem; color: #ff9800; opacity: 0.7;"></i>
-    <p style="font-size: 1.2rem; font-style: italic; margin: 0.5rem 0;">“The only bad workout is the one that didn’t happen. Build muscle, build character, build life.”</p>
+    <p style="font-size: 1.2rem; font-style: italic; margin: 0.5rem 0;">“The only bad workout is the one that didn't happen. Build muscle, build character, build life.”</p>
     <p>— Fit 9 Gym Family</p>
     <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
       <span><i class="fas fa-dumbbell" style="color:#ff9800;"></i> 20+ Dumbbell Pairs</span>
@@ -563,7 +715,7 @@
 </div>
 
 <script>
-  // smooth scroll and dynamic year
+  // smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
