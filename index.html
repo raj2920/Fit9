@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Fit 9 Gym | Transform Your Body, Transform Your Life</title>
-  <!-- Google Fonts & Font Awesome for icons -->
+  <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -24,63 +24,172 @@
       scroll-behavior: smooth;
     }
 
-    /* ---------- BACKGROUND with bodybuilder images ---------- */
-    .bg-slideshow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
+    /* ========== HERO SECTION - BOLD GYM NAME & POWER QUOTES ========== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.7));
       overflow: hidden;
     }
 
-    .bg-slideshow::after {
-      content: '';
+    /* Background video/image overlay for hero */
+    .hero-bg {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: brightness(0.85) blur(1px);
-      z-index: 1;
+      object-fit: cover;
+      z-index: -2;
     }
 
-    .slide {
+    .hero-bg-img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      background-image: url('https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=1600');
       background-size: cover;
       background-position: center 30%;
-      background-repeat: no-repeat;
-      opacity: 0;
-      animation: fadeAnimation 24s infinite;
+      z-index: -2;
+      animation: slowZoom 20s ease-in-out infinite alternate;
     }
 
-    .slide-1 { background-image: url('https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 20%; }
-    .slide-2 { background-image: url('https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 35%; }
-    .slide-3 { background-image: url('https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 25%; }
-    .slide-4 { background-image: url('https://images.pexels.com/photos/260447/pexels-photo-260447.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 30%; }
-    .slide-5 { background-image: url('https://images.pexels.com/photos/38630/bodybuilder-stronger-muscle-biceps-38630.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 40%; }
-
-    .slide-1 { animation-delay: 0s; }
-    .slide-2 { animation-delay: 4.8s; }
-    .slide-3 { animation-delay: 9.6s; }
-    .slide-4 { animation-delay: 14.4s; }
-    .slide-5 { animation-delay: 19.2s; }
-
-    @keyframes fadeAnimation {
-      0% { opacity: 0; }
-      8% { opacity: 1; }
-      20% { opacity: 1; }
-      28% { opacity: 0; }
-      100% { opacity: 0; }
+    @keyframes slowZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.08); }
     }
 
-    /* main content container */
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      padding: 2rem;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* BOLD GYM NAME */
+    .gym-name {
+      font-size: 5.5rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #FFD966, #FFA500, #FF6B00);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 30px rgba(255, 153, 0, 0.3);
+      margin-bottom: 1rem;
+    }
+
+    .gym-name span {
+      font-size: 1.8rem;
+      display: inline-block;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+      color: #ff9800;
+      text-shadow: none;
+    }
+
+    /* POWER QUOTES SECTION */
+    .power-quotes {
+      margin: 2rem 0;
+    }
+
+    .quote-main {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+      margin-bottom: 1rem;
+    }
+
+    .quote-main i {
+      color: #ff9800;
+      margin: 0 0.5rem;
+    }
+
+    .quote-sub {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #ddd;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero-buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero {
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: #ff9800;
+      color: #111;
+      box-shadow: 0 5px 20px rgba(255, 153, 0, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: #ffb347;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 153, 0, 0.6);
+    }
+
+    .btn-outline {
+      border: 2px solid #ff9800;
+      color: #ff9800;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: #ff9800;
+      color: #111;
+      transform: translateY(-3px);
+    }
+
+    /* Rest of the website styling */
     .container {
       max-width: 1300px;
       margin: 0 auto;
@@ -89,57 +198,39 @@
       z-index: 5;
     }
 
-    /* header / navbar */
+    /* navbar */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
-      padding-bottom: 1rem;
+      padding: 1rem 0;
       border-bottom: 1px solid rgba(255, 215, 0, 0.3);
       margin-bottom: 2rem;
     }
-    .logo h1 {
-      font-size: 2rem;
+
+    .logo h2 {
+      font-size: 1.8rem;
       font-weight: 800;
-      letter-spacing: -0.5px;
       background: linear-gradient(135deg, #FFD966, #FFA500);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
-    .logo p {
-      font-size: 0.85rem;
-      color: #ddd;
-      letter-spacing: 1px;
-    }
-    .tagline-mobile {
-      font-size: 0.9rem;
-      background: rgba(0,0,0,0.6);
-      padding: 0.3rem 0.8rem;
-      border-radius: 40px;
-    }
-    .cta-btn {
-      background: #ff9800;
-      color: #111;
-      padding: 0.6rem 1.2rem;
-      border-radius: 40px;
-      font-weight: bold;
+
+    .nav-links a {
+      color: #fff;
       text-decoration: none;
-      transition: 0.3s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-    }
-    .cta-btn:hover {
-      background: #ffb347;
-      transform: scale(1.02);
-      box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.3s;
     }
 
-    /* card style with glassmorphism */
+    .nav-links a:hover {
+      color: #ff9800;
+    }
+
     .card {
       background: rgba(10, 10, 10, 0.7);
       backdrop-filter: blur(10px);
@@ -148,13 +239,13 @@
       margin-bottom: 2rem;
       border: 1px solid rgba(255, 255, 255, 0.15);
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     }
+
     .card:hover {
       transform: translateY(-5px);
       border-color: rgba(255, 153, 0, 0.4);
-      box-shadow: 0 25px 40px rgba(0,0,0,0.4);
     }
+
     .section-title {
       font-size: 1.8rem;
       font-weight: 700;
@@ -163,35 +254,21 @@
       padding-left: 1rem;
       display: inline-block;
     }
+
     .grid-2col {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.8rem;
     }
-    .service-item, .why-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(0,0,0,0.5);
-      padding: 1rem 1.2rem;
-      border-radius: 1.5rem;
-      backdrop-filter: blur(4px);
-      transition: all 0.2s;
-    }
-    .service-item i, .why-item i {
-      font-size: 2rem;
-      color: #ff9800;
-      width: 45px;
-      text-align: center;
-    }
-    
-    /* MEMBERSHIP PLANS - Attractive Pricing Cards */
+
+    /* Pricing Cards */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.8rem;
       margin-top: 1rem;
     }
+
     .pricing-card {
       background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(20,20,20,0.9));
       border-radius: 1.8rem;
@@ -199,41 +276,43 @@
       transition: all 0.3s ease;
       border: 1px solid rgba(255, 153, 0, 0.3);
       text-align: center;
-      backdrop-filter: blur(5px);
     }
+
     .pricing-card:hover {
       transform: translateY(-8px);
       border-color: #ff9800;
       box-shadow: 0 20px 35px rgba(255, 153, 0, 0.25);
     }
+
     .pricing-header {
       padding: 1.5rem;
       background: linear-gradient(135deg, rgba(255, 153, 0, 0.2), rgba(0,0,0,0.5));
     }
+
     .pricing-header h3 {
       font-size: 1.8rem;
       font-weight: 800;
       color: #ff9800;
     }
+
     .pricing-header .price {
       font-size: 2.5rem;
       font-weight: 800;
       color: #fff;
       margin: 0.5rem 0;
     }
-    .pricing-header .price span {
-      font-size: 1rem;
-      color: #aaa;
-    }
+
     .pricing-img {
       width: 100%;
       height: 160px;
       object-fit: cover;
     }
+
     .pricing-features {
       padding: 1.2rem;
       text-align: left;
     }
+
     .pricing-features li {
       list-style: none;
       padding: 0.5rem 0;
@@ -243,10 +322,12 @@
       font-size: 0.9rem;
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
+
     .pricing-features li i {
       color: #ff9800;
       width: 22px;
     }
+
     .pricing-btn {
       display: inline-block;
       background: #ff9800;
@@ -258,10 +339,7 @@
       margin: 1rem 0 1.2rem;
       transition: 0.2s;
     }
-    .pricing-btn:hover {
-      background: #ffb347;
-      transform: scale(1.02);
-    }
+
     .badge {
       display: inline-block;
       background: #ff9800;
@@ -272,106 +350,66 @@
       font-weight: bold;
       margin-left: 0.5rem;
     }
-    
-    /* EQUIPMENT GALLERY STYLES */
+
+    /* Equipment Gallery */
     .equipment-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
       margin-top: 1rem;
     }
+
     .equipment-card {
       background: rgba(0, 0, 0, 0.6);
       border-radius: 1.5rem;
       overflow: hidden;
       transition: all 0.3s ease;
       border: 1px solid rgba(255, 153, 0, 0.3);
-      cursor: pointer;
     }
+
     .equipment-card:hover {
       transform: scale(1.03);
       border-color: #ff9800;
-      box-shadow: 0 15px 30px rgba(255, 153, 0, 0.2);
     }
+
     .equipment-img {
       width: 100%;
       height: 220px;
       object-fit: cover;
-      transition: transform 0.4s;
     }
-    .equipment-card:hover .equipment-img {
-      transform: scale(1.05);
-    }
+
     .equipment-info {
       padding: 1rem;
       text-align: center;
     }
+
     .equipment-info h4 {
       color: #ff9800;
       font-size: 1.2rem;
-      margin-bottom: 0.3rem;
     }
-    .equipment-info p {
-      font-size: 0.85rem;
-      color: #ddd;
-    }
-    
-    /* DUMBBELL SPOTLIGHT SECTION */
-    .dumbbell-spotlight {
-      background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
-      border-radius: 1.8rem;
-      padding: 1.5rem;
-      margin-top: 1rem;
+
+    .service-item, .why-item {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .dumbbell-img-container {
-      flex: 1;
-      min-width: 200px;
-      text-align: center;
-    }
-    .dumbbell-img-container img {
-      max-width: 100%;
+      gap: 1rem;
+      background: rgba(0,0,0,0.5);
+      padding: 1rem 1.2rem;
       border-radius: 1.5rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
     }
-    .dumbbell-img-container img:hover {
-      transform: scale(1.02);
-    }
-    .dumbbell-text {
-      flex: 1;
-      min-width: 200px;
-    }
-    .dumbbell-text h3 {
+
+    .service-item i, .why-item i {
+      font-size: 2rem;
       color: #ff9800;
-      font-size: 1.8rem;
-      margin-bottom: 0.8rem;
+      width: 45px;
     }
-    .dumbbell-text ul {
-      list-style: none;
-      padding: 0;
-    }
-    .dumbbell-text li {
-      margin: 0.6rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    .dumbbell-text li i {
-      color: #ff9800;
-      font-size: 1.2rem;
-    }
-    
+
     .info-block {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
       justify-content: space-between;
     }
+
     .info-detail {
       background: rgba(0,0,0,0.5);
       border-radius: 1.2rem;
@@ -380,27 +418,12 @@
       min-width: 200px;
       text-align: center;
     }
+
     .info-detail i {
       font-size: 2rem;
       color: #ff9800;
-      margin-bottom: 0.6rem;
     }
-    .contact-links a {
-      color: #ff9800;
-      text-decoration: none;
-      font-weight: 500;
-      word-break: break-all;
-    }
-    .contact-links a:hover {
-      text-decoration: underline;
-    }
-    .footer {
-      text-align: center;
-      padding: 1.5rem 0 0.5rem;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      margin-top: 1rem;
-      font-size: 0.85rem;
-    }
+
     .btn-wa {
       display: inline-block;
       background: #25D366;
@@ -408,68 +431,90 @@
       padding: 0.7rem 1.5rem;
       border-radius: 40px;
       font-weight: bold;
-      margin-top: 0.5rem;
-      transition: 0.2s;
       text-decoration: none;
     }
-    .btn-wa i {
-      margin-right: 8px;
-    }
-    .btn-wa:hover {
-      background: #20b859;
-      transform: scale(1.02);
-    }
+
     .timing-split {
       display: flex;
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
     }
-    @media (max-width: 700px) {
+
+    .footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .gym-name {
+        font-size: 3rem;
+      }
+      .quote-main {
+        font-size: 1.2rem;
+      }
       .navbar {
         flex-direction: column;
         text-align: center;
       }
+      .nav-links a {
+        margin: 0 0.8rem;
+      }
       .section-title {
         font-size: 1.5rem;
-      }
-      .card {
-        padding: 1.2rem;
-      }
-      .equipment-img {
-        height: 180px;
-      }
-      .pricing-header h3 {
-        font-size: 1.4rem;
-      }
-      .pricing-header .price {
-        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- Background slideshow with bodybuilder pictures -->
-<div class="bg-slideshow">
-  <div class="slide slide-1"></div>
-  <div class="slide slide-2"></div>
-  <div class="slide slide-3"></div>
-  <div class="slide slide-4"></div>
-  <div class="slide slide-5"></div>
-</div>
+<!-- ========== HERO SECTION - BOLD GYM NAME & POWER QUOTES ========== -->
+<section class="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="gym-name">
+      FIT 9 GYM
+      <span>💪</span>
+    </div>
+    
+    <!-- POWER QUOTES SECTION - Attractive and Motivating -->
+    <div class="power-quotes">
+      <div class="quote-main">
+        <i class="fas fa-fire"></i> UNLEASH THE BEAST WITHIN <i class="fas fa-fire"></i>
+      </div>
+      <div class="quote-main" style="font-size: 1.5rem; margin-top: 0.5rem;">
+        "NO PAIN · NO GAIN"
+      </div>
+      <div class="quote-sub">
+        <i class="fas fa-quote-left"></i> Your body can do anything — it's your mind you have to convince. <i class="fas fa-quote-right"></i>
+      </div>
+      <div class="quote-sub" style="margin-top: 1rem; font-weight: 600;">
+        💯 TRANSFORM YOUR BODY · TRANSFORM YOUR LIFE 💯
+      </div>
+    </div>
+    
+    <div class="hero-buttons">
+      <a href="#membership" class="btn-hero btn-primary"><i class="fas fa-tags"></i> JOIN NOW</a>
+      <a href="#about" class="btn-hero btn-outline"><i class="fas fa-info-circle"></i> EXPLORE GYM</a>
+    </div>
+  </div>
+</section>
 
+<!-- Main Content Container -->
 <div class="container">
-  <!-- Navigation / Header -->
+  <!-- Navigation Bar -->
   <div class="navbar">
     <div class="logo">
-      <h1>FIT 9 GYM</h1>
-      <p>Transform Your Body, Transform Your Life</p>
+      <h2>FIT 9 GYM</h2>
     </div>
-    <div class="tagline-mobile">
-      <i class="fas fa-dumbbell"></i> No pain, no gain
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#membership">Plans</a>
+      <a href="#equipment">Equipment</a>
+      <a href="#contact">Contact</a>
     </div>
-    <a href="#membership" class="cta-btn"><i class="fas fa-tags"></i> View Plans</a>
   </div>
 
   <!-- About Us Section -->
@@ -477,46 +522,32 @@
     <div>
       <span class="section-title"><i class="fas fa-info-circle"></i> About Us</span>
     </div>
-    <p style="font-size: 1.1rem; margin-top: 1rem; line-height: 1.6;">Welcome to <strong>Fit 9 Gym</strong>, your ultimate fitness destination for both men and women. We provide a motivating environment, modern equipment, and expert guidance to help you achieve your fitness goals—whether it's weight loss, muscle gain, or overall wellness. Our community is built on discipline, support, and transformation.</p>
+    <p style="font-size: 1.1rem; margin-top: 1rem; line-height: 1.6;">Welcome to <strong>Fit 9 Gym</strong>, your ultimate fitness destination for both men and women. We provide a motivating environment, modern equipment, and expert guidance to help you achieve your fitness goals—whether it's weight loss, muscle gain, or overall wellness. <strong>Our community is built on discipline, support, and transformation.</strong></p>
   </div>
 
-  <!-- Location & Timings combined row -->
+  <!-- Location & Timings -->
   <div class="grid-2col" style="margin-bottom: 2rem;">
     <div class="card" style="margin-bottom: 0;">
       <div class="section-title" style="font-size: 1.4rem;"><i class="fas fa-map-marker-alt"></i> Location</div>
-      <p style="margin-top: 0.8rem;"><i class="fas fa-location-dot" style="color:#ff9800;"></i> Champa Gali, Lane No. 3, Western Marg<br>Saket, Delhi – 110030</p>
-      <div style="margin-top: 1rem;">
-        <iframe width="100%" height="180" style="border:0; border-radius: 20px; filter: brightness(0.9);" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Saket+Delhi+Champa+Gali&center=28.5245,77.2089&zoom=14"></iframe>
-        <p style="font-size: 0.7rem; margin-top: 6px;">📍 Landmark: Near Champa Gali Cafe</p>
-      </div>
+      <p><i class="fas fa-location-dot" style="color:#ff9800;"></i> Champa Gali, Lane No. 3, Western Marg<br>Saket, Delhi – 110030</p>
     </div>
     <div class="card" style="margin-bottom: 0;">
       <div class="section-title" style="font-size: 1.4rem;"><i class="far fa-clock"></i> Gym Timings</div>
-      <div class="timing-split" style="margin-top: 1rem;">
-        <div style="text-align: center; background: rgba(0,0,0,0.5); padding: 0.8rem; border-radius: 1rem; width: 140px;">
-          <i class="fas fa-sun" style="color: #ffaa33;"></i>
-          <h3>Morning</h3>
-          <p style="font-weight: bold;">6:00 AM – 11:00 AM</p>
-        </div>
-        <div style="text-align: center; background: rgba(0,0,0,0.5); padding: 0.8rem; border-radius: 1rem; width: 140px;">
-          <i class="fas fa-moon" style="color: #88ccff;"></i>
-          <h3>Evening</h3>
-          <p style="font-weight: bold;">5:00 PM – 10:00 PM</p>
-        </div>
+      <div class="timing-split">
+        <div style="text-align: center;"><i class="fas fa-sun" style="color: #ffaa33;"></i><h3>Morning</h3><p>6:00 AM – 11:00 AM</p></div>
+        <div style="text-align: center;"><i class="fas fa-moon" style="color: #88ccff;"></i><h3>Evening</h3><p>5:00 PM – 10:00 PM</p></div>
       </div>
-      <p style="margin-top: 1rem; text-align: center;"><i class="fas fa-calendar-alt"></i> Open all days (limited slots on public holidays)</p>
     </div>
   </div>
 
-  <!-- ========== MEMBERSHIP PLANS SECTION with Attractive Pricing & Images ========== -->
+  <!-- MEMBERSHIP PLANS SECTION -->
   <div class="card" id="membership">
     <div class="section-title"><i class="fas fa-tags"></i> Membership Plans</div>
     <p style="margin-bottom: 1.2rem;">Choose the perfect plan that fits your fitness journey. Affordable rates with premium facilities!</p>
     
     <div class="pricing-grid">
-      <!-- Monthly Plan - ₹2000 -->
       <div class="pricing-card">
-        <img class="pricing-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monthly Membership">
+        <img class="pricing-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monthly">
         <div class="pricing-header">
           <h3>MONTHLY</h3>
           <div class="price">₹2,000<span>/month</span></div>
@@ -525,197 +556,117 @@
           <li><i class="fas fa-check-circle"></i> Full Gym Access</li>
           <li><i class="fas fa-check-circle"></i> Cardio & Weight Training</li>
           <li><i class="fas fa-check-circle"></i> Basic Guidance</li>
-          <li><i class="fas fa-check-circle"></i> Locker Facility</li>
-          <li><i class="fas fa-check-circle"></i> Flexible Timing</li>
         </ul>
-        <a href="https://wa.me/919608520740?text=I'm%20interested%20in%20MONTHLY%20membership%20(₹2000)%20at%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
+        <a href="https://wa.me/919608520740?text=Monthly%20membership%20₹2000%20-%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
       </div>
       
-      <!-- Quarterly Plan - ₹4000 (3 months) -->
       <div class="pricing-card">
-        <img class="pricing-img" src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quarterly Membership">
+        <img class="pricing-img" src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quarterly">
         <div class="pricing-header">
           <h3>QUARTERLY <span class="badge">SAVE 33%</span></h3>
           <div class="price">₹4,000<span>/3 months</span></div>
         </div>
         <ul class="pricing-features">
           <li><i class="fas fa-check-circle"></i> Everything in Monthly</li>
-          <li><i class="fas fa-check-circle"></i> 1 Free Personal Training Session</li>
+          <li><i class="fas fa-check-circle"></i> 1 Free Personal Training</li>
           <li><i class="fas fa-check-circle"></i> Body Composition Analysis</li>
-          <li><i class="fas fa-check-circle"></i> Priority Class Booking</li>
-          <li><i class="fas fa-check-circle"></i> Free Protein Shake (1x/month)</li>
         </ul>
-        <a href="https://wa.me/919608520740?text=I'm%20interested%20in%20QUARTERLY%20membership%20(₹4000)%20at%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
+        <a href="https://wa.me/919608520740?text=Quarterly%20membership%20₹4000%20-%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
       </div>
       
-      <!-- Half Yearly Plan - ₹6000 (6 months) -->
       <div class="pricing-card">
-        <img class="pricing-img" src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Half Yearly Membership">
+        <img class="pricing-img" src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Half Yearly">
         <div class="pricing-header">
           <h3>HALF YEARLY <span class="badge">SAVE 50%</span></h3>
           <div class="price">₹6,000<span>/6 months</span></div>
         </div>
         <ul class="pricing-features">
           <li><i class="fas fa-check-circle"></i> Everything in Quarterly</li>
-          <li><i class="fas fa-check-circle"></i> 3 Free Personal Training Sessions</li>
+          <li><i class="fas fa-check-circle"></i> 3 Free PT Sessions</li>
           <li><i class="fas fa-check-circle"></i> Diet Plan Consultation</li>
-          <li><i class="fas fa-check-circle"></i> Gym Merchandise (T-shirt)</li>
-          <li><i class="fas fa-check-circle"></i> Guest Pass (2 times)</li>
         </ul>
-        <a href="https://wa.me/919608520740?text=I'm%20interested%20in%20HALF%20YEARLY%20membership%20(₹6000)%20at%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
+        <a href="https://wa.me/919608520740?text=Half%20Yearly%20membership%20₹6000%20-%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
       </div>
       
-      <!-- Yearly Plan - ₹10000 (12 months) Best Value -->
       <div class="pricing-card">
-        <img class="pricing-img" src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yearly Membership">
+        <img class="pricing-img" src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yearly">
         <div class="pricing-header">
           <h3>YEARLY <span class="badge">BEST VALUE</span></h3>
           <div class="price">₹10,000<span>/year</span></div>
-          <small style="color:#ff9800;">Save ₹14,000 vs monthly</small>
         </div>
         <ul class="pricing-features">
           <li><i class="fas fa-check-circle"></i> Everything in Half Yearly</li>
-          <li><i class="fas fa-check-circle"></i> Unlimited Personal Training (2x/week)</li>
-          <li><i class="fas fa-check-circle"></i> Free Gym Kit (Bag + Bottle)</li>
-          <li><i class="fas fa-check-circle"></i> Priority Support & Freeze Option</li>
-          <li><i class="fas fa-check-circle"></i> Complimentary Wellness Session</li>
+          <li><i class="fas fa-check-circle"></i> Unlimited PT (2x/week)</li>
+          <li><i class="fas fa-check-circle"></i> Free Gym Kit + Wellness</li>
         </ul>
-        <a href="https://wa.me/919608520740?text=I'm%20interested%20in%20YEARLY%20membership%20(₹10000)%20at%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
+        <a href="https://wa.me/919608520740?text=Yearly%20membership%20₹10000%20-%20Fit%209%20Gym" class="pricing-btn" target="_blank"><i class="fab fa-whatsapp"></i> Join Now</a>
       </div>
     </div>
   </div>
 
-  <!-- ========== EQUIPMENT GALLERY SECTION with Dumbbell & Equipment Images ========== -->
-  <div class="card">
-    <div class="section-title"><i class="fas fa-microphone-alt"></i> Premium Equipment</div>
-    <p style="margin-bottom: 1.2rem; opacity: 0.9;">Top-of-the-line machines, free weights & cardio gear to fuel your transformation 💪</p>
-    
+  <!-- EQUIPMENT GALLERY with Dumbbell Images -->
+  <div class="card" id="equipment">
+    <div class="section-title"><i class="fas fa-dumbbell"></i> Premium Equipment</div>
     <div class="equipment-gallery">
       <div class="equipment-card">
-        <img class="equipment-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Professional Dumbbells Rack">
-        <div class="equipment-info">
-          <h4><i class="fas fa-dumbbell"></i> Premium Dumbbells</h4>
-          <p>2kg to 50kg | Chrome Plated | Non-slip grip</p>
-        </div>
+        <img class="equipment-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dumbbells">
+        <div class="equipment-info"><h4><i class="fas fa-dumbbell"></i> Premium Dumbbells</h4><p>2kg to 50kg | Chrome Plated</p></div>
       </div>
       <div class="equipment-card">
-        <img class="equipment-img" src="https://images.pexels.com/photos/260683/pexels-photo-260683.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Barbell Weight Lifting">
-        <div class="equipment-info">
-          <h4><i class="fas fa-weight-hanging"></i> Olympic Barbells</h4>
-          <p>20kg bars | 7ft & 6ft options | Heavy duty</p>
-        </div>
+        <img class="equipment-img" src="https://images.pexels.com/photos/260683/pexels-photo-260683.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Barbell">
+        <div class="equipment-info"><h4><i class="fas fa-weight-hanging"></i> Olympic Barbells</h4><p>20kg bars | Heavy duty</p></div>
       </div>
       <div class="equipment-card">
-        <img class="equipment-img" src="https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Leg Press Machine">
-        <div class="equipment-info">
-          <h4><i class="fas fa-cogs"></i> Leg Press Machine</h4>
-          <p>Plate-loaded | Quad & hamstring focus</p>
-        </div>
+        <img class="equipment-img" src="https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Leg Press">
+        <div class="equipment-info"><h4><i class="fas fa-cogs"></i> Leg Press Machine</h4><p>Plate-loaded | Strength focus</p></div>
       </div>
       <div class="equipment-card">
-        <img class="equipment-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Treadmill Cardio">
-        <div class="equipment-info">
-          <h4><i class="fas fa-heartbeat"></i> Advanced Treadmills</h4>
-          <p>HD touchscreen | Incline up to 15%</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Dumbbell Spotlight Section -->
-    <div class="dumbbell-spotlight" style="margin-top: 2rem;">
-      <div class="dumbbell-img-container">
-        <img src="https://images.pexels.com/photos/260352/pexels-photo-260352.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Heavy Dumbbells Rack Display">
-      </div>
-      <div class="dumbbell-text">
-        <h3><i class="fas fa-dumbbell"></i> Ultimate Dumbbell Zone</h3>
-        <p>Our gym features a dedicated free weights area with the finest dumbbell collection in Saket. Perfect for:</p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> Bicep curls & Tricep extensions</li>
-          <li><i class="fas fa-check-circle"></i> Shoulder presses & Lateral raises</li>
-          <li><i class="fas fa-check-circle"></i> Dumbbell rows & Chest flyes</li>
-          <li><i class="fas fa-check-circle"></i> Progressive overload from 2kg to 50kg</li>
-        </ul>
-        <a href="#membership" class="cta-btn" style="margin-top: 1rem; display: inline-block;"><i class="fas fa-tags"></i> View Membership Plans</a>
+        <img class="equipment-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Treadmill">
+        <div class="equipment-info"><h4><i class="fas fa-heartbeat"></i> Advanced Treadmills</h4><p>HD touchscreen | Incline 15%</p></div>
       </div>
     </div>
   </div>
 
-  <!-- Our Services Section -->
-  <div class="card">
-    <div class="section-title"><i class="fas fa-dumbbell"></i> Our Services</div>
-    <div class="grid-2col" style="margin-top: 1rem;">
+  <!-- Services & Why Choose -->
+  <div class="grid-2col">
+    <div class="card">
+      <div class="section-title"><i class="fas fa-dumbbell"></i> Our Services</div>
       <div class="service-item"><i class="fas fa-weight-hanging"></i> Weight Training</div>
       <div class="service-item"><i class="fas fa-heartbeat"></i> Cardio Workouts</div>
       <div class="service-item"><i class="fas fa-user-check"></i> Personal Training</div>
       <div class="service-item"><i class="fas fa-fire"></i> Fat Loss Programs</div>
       <div class="service-item"><i class="fas fa-chart-line"></i> Muscle Building Plans</div>
-      <div class="service-item"><i class="fas fa-hands-helping"></i> Beginner-Friendly Guidance</div>
+    </div>
+    <div class="card">
+      <div class="section-title"><i class="fas fa-star"></i> Why Choose Us?</div>
+      <div class="why-item"><i class="fas fa-female"></i> Men & Women Friendly</div>
+      <div class="why-item"><i class="fas fa-chalkboard-user"></i> Expert Trainers</div>
+      <div class="why-item"><i class="fas fa-rupee-sign"></i> Affordable Plans</div>
+      <div class="why-item"><i class="fas fa-broom"></i> Clean Gym</div>
+      <div class="why-item"><i class="fas fa-hand-fist"></i> Latest Equipment</div>
     </div>
   </div>
 
-  <!-- Why Choose Fit 9 -->
-  <div class="card">
-    <div class="section-title"><i class="fas fa-star"></i> Why Choose Fit 9?</div>
-    <div class="grid-2col" style="margin-top: 1rem;">
-      <div class="why-item"><i class="fas fa-female"></i> <span>Friendly environment for both men & women</span></div>
-      <div class="why-item"><i class="fas fa-chalkboard-user"></i> <span>Experienced trainers</span></div>
-      <div class="why-item"><i class="fas fa-rupee-sign"></i> <span>Affordable membership plans</span></div>
-      <div class="why-item"><i class="fas fa-broom"></i> <span>Clean and well-maintained gym</span></div>
-      <div class="why-item"><i class="fas fa-user-edit"></i> <span>Personalized fitness support</span></div>
-      <div class="why-item"><i class="fas fa-hand-fist"></i> <span>Latest equipment & strength zone</span></div>
-    </div>
-  </div>
-
-  <!-- Contact Details Section -->
-  <div class="card" id="join">
-    <div class="section-title"><i class="fas fa-address-card"></i> Contact & Join Today</div>
+  <!-- Contact Section -->
+  <div class="card" id="contact">
+    <div class="section-title"><i class="fas fa-address-card"></i> Contact Us</div>
     <div class="info-block">
-      <div class="info-detail">
-        <i class="fas fa-user-circle"></i>
-        <h3>Anjali Singh</h3>
-        <p>Manager & Head Coach</p>
-      </div>
-      <div class="info-detail">
-        <i class="fas fa-phone-alt"></i>
-        <h3>Call / WhatsApp</h3>
-        <p class="contact-links"><a href="tel:+919608520740">9608520740</a></p>
-        <a href="https://wa.me/919608520740?text=Hi%20Anjali%2C%20I%20want%20to%20join%20Fit%209%20Gym" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
-      </div>
-      <div class="info-detail">
-        <i class="fas fa-envelope"></i>
-        <h3>Email</h3>
-        <p class="contact-links"><a href="mailto:fit9gym.saket@gmail.com">fit9gym.saket@gmail.com</a></p>
-        <p style="font-size: 0.75rem; margin-top: 0.5rem;"><i class="fas fa-reply-all"></i> Response within 24h</p>
-      </div>
+      <div class="info-detail"><i class="fas fa-user-circle"></i><h3>Anjali Singh</h3><p>Manager & Head Coach</p></div>
+      <div class="info-detail"><i class="fas fa-phone-alt"></i><h3>Call / WhatsApp</h3><p><a href="tel:+919608520740" style="color:#ff9800;">9608520740</a></p><a href="https://wa.me/919608520740?text=Hi%20Fit%209%20Gym" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></div>
+      <div class="info-detail"><i class="fas fa-envelope"></i><h3>Email</h3><p><a href="mailto:fit9gym.saket@gmail.com" style="color:#ff9800;">fit9gym.saket@gmail.com</a></p></div>
     </div>
-    <div style="background: rgba(0,0,0,0.5); border-radius: 1.5rem; padding: 1.5rem; text-align: center; margin-top: 1rem;">
-      <h2 style="font-weight: 800; font-size: 1.8rem;"><i class="fas fa-heart" style="color:#ff6666;"></i> Start Your Fitness Journey Today</h2>
-      <p style="margin: 0.8rem 0;">Become the best version of yourself with <strong>Fit 9 Gym</strong>. Limited introductory offers!</p>
-      <a href="#membership" class="cta-btn" style="background:#ff9800; padding: 0.8rem 2rem; font-size: 1rem;"><i class="fas fa-tags"></i> View Membership Plans</a>
-    </div>
-  </div>
-
-  <!-- Motivation Quote -->
-  <div class="card" style="text-align: center; background: rgba(0,0,0,0.65);">
-    <i class="fas fa-quote-left" style="font-size: 2rem; color: #ff9800; opacity: 0.7;"></i>
-    <p style="font-size: 1.2rem; font-style: italic; margin: 0.5rem 0;">“The only bad workout is the one that didn't happen. Build muscle, build character, build life.”</p>
-    <p>— Fit 9 Gym Family</p>
-    <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-      <span><i class="fas fa-dumbbell" style="color:#ff9800;"></i> 20+ Dumbbell Pairs</span>
-      <span><i class="fas fa-microphone-alt" style="color:#ff9800;"></i> Premium Machines</span>
-      <span><i class="fas fa-check-circle" style="color:#4caf50;"></i> Free Trial Session</span>
-      <span><i class="fas fa-female" style="color:#ff9800;"></i> Women Exclusive Hours</span>
+    <div style="text-align: center; margin-top: 1.5rem;">
+      <a href="#membership" class="btn-hero btn-primary" style="background:#ff9800;"><i class="fas fa-tags"></i> START YOUR JOURNEY TODAY</a>
     </div>
   </div>
 
   <div class="footer">
-    <p>© 2025 Fit 9 Gym — Transform Your Body, Transform Your Life. | Champa Gali, Saket, Delhi</p>
-    <p style="margin-top: 6px;"><i class="fas fa-dumbbell"></i> Premium Dumbbells | Racks | Machines | Cardio Zone</p>
+    <p>© 2025 Fit 9 Gym — Transform Your Body, Transform Your Life | Champa Gali, Saket, Delhi</p>
+    <p><i class="fas fa-dumbbell"></i> FUEL YOUR PASSION · BUILD YOUR LEGACY <i class="fas fa-dumbbell"></i></p>
   </div>
 </div>
 
 <script>
-  // smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -727,10 +678,6 @@
       }
     });
   });
-  const footerYear = document.querySelector('.footer p:first-child');
-  if(footerYear) {
-    footerYear.innerHTML = `© ${new Date().getFullYear()} Fit 9 Gym — Transform Your Body, Transform Your Life. | Champa Gali, Saket, Delhi`;
-  }
 </script>
 </body>
 </html>
