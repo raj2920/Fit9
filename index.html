@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>GYM FIT | Fitness Center</title>
-  <!-- Google Fonts & Font Awesome -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GYMFIT | Fitness Center</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -18,234 +17,211 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background-color: #0a0a0a;
-      color: #f0f0f0;
+      color: #fff;
     }
 
-    /* ========== FIRST PAGE - EXACTLY LIKE REFERENCE IMAGE ========== */
-    .hero-first-page {
-      position: relative;
-      min-height: 100vh;
+    /* AI-Generated Bodybuilder Background for ALL pages */
+    .ai-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-                  url('https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      height: 100%;
+      z-index: -2;
+      background-image: url('https://i.imgur.com/7YqNn5L.jpeg');
       background-size: cover;
-      background-position: center 30%;
-      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    /* Fallback gradient + overlay if image takes time */
+    .ai-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.75));
+      z-index: 1;
+    }
+    
+    /* Dark overlay for readability */
+    .overlay-dark {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: -1;
     }
 
-    /* Header Navigation */
-    .header-top {
-      padding: 20px 60px;
+    /* Main content */
+    .main-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Header */
+    .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 20px 50px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 107, 0, 0.3);
       flex-wrap: wrap;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .logo {
       font-size: 28px;
       font-weight: 800;
-      letter-spacing: 2px;
       font-family: 'Oswald', sans-serif;
     }
 
-    .logo span:first-child {
-      color: #ff6b00;
-    }
+    .logo span:first-child { color: #ff6b00; }
+    .logo span:last-child { color: #fff; }
 
-    .logo span:last-child {
-      color: #ffffff;
-    }
-
-    .nav-menu {
+    .nav {
       display: flex;
-      gap: 28px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
-    .nav-menu a {
+    .nav a {
       color: #fff;
       text-decoration: none;
-      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: color 0.3s;
       font-family: 'Oswald', sans-serif;
+      transition: color 0.3s;
     }
 
-    .nav-menu a:hover {
-      color: #ff6b00;
-    }
+    .nav a:hover { color: #ff6b00; }
 
-    /* Hero Content */
-    .hero-content-center {
+    /* Hero Section */
+    .hero {
+      min-height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 80px 20px 60px;
-      min-height: 80vh;
+      padding: 60px 20px;
     }
 
-    .hero-title {
-      font-family: 'Oswald', sans-serif;
-      font-size: 80px;
-      font-weight: 800;
-      letter-spacing: 8px;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .hero-title .line1 {
-      color: #fff;
-      display: block;
-    }
-
-    .hero-title .line2 {
-      color: #ff6b00;
-      display: block;
+    .hero h1 {
       font-size: 70px;
-      letter-spacing: 6px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 800;
+      letter-spacing: 5px;
     }
 
-    .hero-description {
-      max-width: 700px;
+    .hero h1 span:first-child { color: #fff; display: block; }
+    .hero h1 span:last-child { color: #ff6b00; font-size: 60px; display: block; }
+
+    .hero p {
+      max-width: 600px;
       margin: 20px auto;
       color: #ddd;
-      font-size: 16px;
       line-height: 1.6;
     }
 
-    .hero-description p {
-      margin-bottom: 10px;
-    }
-
-    .hero-buttons {
+    .buttons {
       display: flex;
       gap: 20px;
-      justify-content: center;
       margin-top: 30px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .btn-contact {
+    .btn-primary {
       background: #ff6b00;
       color: #000;
-      padding: 14px 40px;
-      font-size: 16px;
-      font-weight: 700;
+      padding: 12px 35px;
       text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s;
-      border: none;
-      display: inline-block;
+      font-weight: 700;
       font-family: 'Oswald', sans-serif;
+      transition: 0.3s;
+      border-radius: 4px;
     }
 
-    .btn-contact:hover {
+    .btn-primary:hover {
       background: #ff8533;
       transform: translateY(-2px);
     }
 
-    .btn-readmore {
-      background: transparent;
-      color: #ff6b00;
-      padding: 14px 40px;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s;
+    .btn-outline {
       border: 2px solid #ff6b00;
-      display: inline-block;
+      color: #ff6b00;
+      padding: 12px 35px;
+      text-decoration: none;
+      font-weight: 700;
       font-family: 'Oswald', sans-serif;
+      transition: 0.3s;
+      border-radius: 4px;
     }
 
-    .btn-readmore:hover {
+    .btn-outline:hover {
       background: #ff6b00;
       color: #000;
-      transform: translateY(-2px);
     }
 
-    /* Timings Section - Exactly like reference */
-    .timings-section {
+    /* Timings Box */
+    .timings {
       position: absolute;
       bottom: 40px;
       left: 0;
       right: 0;
       display: flex;
       justify-content: center;
-      padding: 0 20px;
     }
 
-    .timings-box {
+    .timing-card {
       background: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(10px);
-      padding: 20px 40px;
-      border-radius: 8px;
-      text-align: center;
-      border-left: 4px solid #ff6b00;
-      border-right: 4px solid #ff6b00;
-      display: inline-flex;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .timings-item {
+      padding: 15px 35px;
+      border-left: 3px solid #ff6b00;
+      border-right: 3px solid #ff6b00;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 15px;
     }
 
-    .timings-item i {
-      font-size: 32px;
+    .timing-card i {
+      font-size: 30px;
       color: #ff6b00;
     }
 
-    .timings-text {
-      text-align: left;
-    }
-
-    .timings-text .label {
-      font-size: 14px;
-      font-weight: 600;
+    .timing-card .label {
+      font-size: 12px;
       color: #ff6b00;
-      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    .timings-text .time {
+    .timing-card .time {
       font-size: 20px;
       font-weight: 700;
-      color: #fff;
-      font-family: 'Oswald', sans-serif;
     }
 
-    /* Rest of the website sections */
+    /* Container for all sections */
     .container {
-      max-width: 1300px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 60px 20px;
     }
 
     .section-title {
       font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 40px;
-      text-align: center;
       font-family: 'Oswald', sans-serif;
+      text-align: center;
+      margin-bottom: 40px;
       position: relative;
       padding-bottom: 15px;
     }
 
-    .section-title:after {
+    .section-title::after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -256,13 +232,20 @@
       background: #ff6b00;
     }
 
-    .about-text {
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-      font-size: 16px;
-      line-height: 1.8;
-      color: #ccc;
+    /* Cards */
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(255, 107, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border-color: #ff6b00;
+      transform: translateY(-5px);
     }
 
     /* Pricing Grid */
@@ -270,458 +253,346 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 25px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
-    @media (max-width: 1024px) {
-      .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    @media (max-width: 1000px) {
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .pricing-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 640px) {
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .pricing-card {
-      background: #111;
+    .price-card {
+      background: rgba(0, 0, 0, 0.7);
       border-radius: 12px;
       overflow: hidden;
-      transition: all 0.3s;
-      border: 1px solid #222;
+      text-align: center;
+      border: 1px solid rgba(255, 107, 0, 0.3);
     }
 
-    .pricing-card:hover {
-      transform: translateY(-10px);
-      border-color: #ff6b00;
-    }
-
-    .pricing-img {
+    .price-card img {
       width: 100%;
-      height: 180px;
+      height: 160px;
       object-fit: cover;
     }
 
-    .pricing-header {
-      padding: 20px;
-      text-align: center;
-      background: #0a0a0a;
-    }
-
-    .pricing-header h3 {
-      font-size: 24px;
+    .price-card h3 {
+      background: rgba(255, 107, 0, 0.2);
+      padding: 15px;
+      font-size: 22px;
       color: #ff6b00;
-      font-family: 'Oswald', sans-serif;
     }
 
-    .price {
-      font-size: 32px;
+    .price-card .price {
+      font-size: 28px;
       font-weight: 800;
-      margin-top: 10px;
+      padding: 10px;
     }
 
-    .price span {
-      font-size: 14px;
-      font-weight: 400;
-    }
-
-    .pricing-features {
-      padding: 0 20px 20px;
-    }
-
-    .pricing-features li {
+    .price-card ul {
+      padding: 15px;
       list-style: none;
+    }
+
+    .price-card li {
       padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       display: flex;
       align-items: center;
-      gap: 10px;
-      border-bottom: 1px solid #222;
-      font-size: 14px;
+      gap: 8px;
     }
 
-    .pricing-features li i {
+    .price-card li i {
       color: #ff6b00;
-      width: 20px;
     }
 
-    .pricing-btn {
+    .price-card a {
       display: block;
       background: #ff6b00;
       color: #000;
-      text-align: center;
-      padding: 12px;
-      margin: 20px;
       text-decoration: none;
-      font-weight: 700;
+      padding: 10px;
+      margin: 15px;
       border-radius: 6px;
-      transition: 0.3s;
-    }
-
-    .pricing-btn:hover {
-      background: #ff8533;
+      font-weight: bold;
     }
 
     .badge {
-      display: inline-block;
       background: #ff6b00;
       color: #000;
       font-size: 11px;
       padding: 2px 8px;
       border-radius: 20px;
       margin-left: 8px;
-      font-weight: bold;
     }
 
-    /* Equipment Gallery */
-    .equipment-gallery {
+    /* Equipment Grid */
+    .equipment-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
-    .equipment-card {
-      background: #111;
+    .equip-item {
+      background: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid #222;
-      transition: 0.3s;
+      text-align: center;
+      border: 1px solid rgba(255, 107, 0, 0.3);
     }
 
-    .equipment-card:hover {
-      transform: scale(1.02);
-      border-color: #ff6b00;
-    }
-
-    .equipment-img {
+    .equip-item img {
       width: 100%;
-      height: 220px;
+      height: 200px;
       object-fit: cover;
     }
 
-    .equipment-info {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .equipment-info h4 {
+    .equip-item h4 {
+      padding: 15px;
       color: #ff6b00;
-      font-size: 18px;
-      margin-bottom: 8px;
     }
 
-    /* Trainers */
-    .trainer-grid {
+    /* Trainers Grid */
+    .trainers-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
-    @media (max-width: 768px) {
-      .trainer-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 700px) {
+      .trainers-grid { grid-template-columns: 1fr; }
     }
 
-    .trainer-card {
-      background: #111;
+    .trainer {
+      background: rgba(0, 0, 0, 0.6);
       border-radius: 16px;
       padding: 30px;
       text-align: center;
-      border: 1px solid #222;
-      transition: 0.3s;
+      border: 1px solid rgba(255, 107, 0, 0.3);
     }
 
-    .trainer-card:hover {
-      border-color: #ff6b00;
-    }
-
-    .trainer-img {
-      width: 180px;
-      height: 180px;
+    .trainer img {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #ff6b00;
-      margin-bottom: 20px;
     }
 
-    .trainer-card h3 {
+    .trainer h3 {
       color: #ff6b00;
-      font-size: 24px;
-      margin-bottom: 8px;
+      margin: 15px 0 5px;
     }
 
-    .trainer-badge {
+    .exp {
       display: inline-block;
       background: #ff6b00;
       color: #000;
-      padding: 4px 16px;
+      padding: 4px 12px;
       border-radius: 20px;
       font-size: 12px;
-      font-weight: bold;
-      margin-top: 10px;
+      margin: 10px 0;
     }
 
-    /* Services Grid */
-    .services-grid {
+    /* 2 Column Layout */
+    .two-col {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
-    @media (max-width: 768px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: 1fr; }
     }
 
-    .service-card {
-      background: #111;
-      padding: 25px;
-      border-radius: 12px;
-      border: 1px solid #222;
-    }
-
-    .service-card h3 {
-      color: #ff6b00;
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-
-    .service-list {
+    .service-list, .why-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 12px;
     }
 
-    .service-item {
+    .service-list span, .why-list span {
+      background: rgba(255, 107, 0, 0.2);
+      padding: 8px 15px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      background: #1a1a1a;
-      padding: 10px 18px;
-      border-radius: 8px;
-      width: calc(50% - 8px);
+      gap: 8px;
+      font-size: 14px;
     }
 
-    .service-item i {
-      color: #ff6b00;
-      font-size: 18px;
-    }
-
-    /* Contact */
+    /* Contact Grid */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 25px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
-    @media (max-width: 1024px) {
-      .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .contact-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 640px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .contact-card {
-      background: #111;
+    .contact-item {
+      background: rgba(0, 0, 0, 0.6);
       padding: 25px;
       text-align: center;
       border-radius: 12px;
-      border: 1px solid #222;
     }
 
-    .contact-card i {
+    .contact-item i {
       font-size: 40px;
       color: #ff6b00;
       margin-bottom: 15px;
     }
 
-    .contact-card h4 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .contact-card a {
-      color: #ff6b00;
-      text-decoration: none;
-    }
-
-    .btn-wa {
+    .whatsapp-btn {
       display: inline-block;
       background: #25D366;
       color: #000;
-      padding: 8px 20px;
-      border-radius: 30px;
+      padding: 6px 18px;
+      border-radius: 25px;
       text-decoration: none;
-      font-weight: bold;
       margin-top: 10px;
+      font-weight: bold;
     }
 
     .footer {
       text-align: center;
       padding: 30px;
-      border-top: 1px solid #222;
+      border-top: 1px solid rgba(255, 107, 0, 0.3);
       margin-top: 40px;
     }
 
     @media (max-width: 768px) {
-      .header-top {
-        padding: 20px;
+      .header {
+        padding: 15px 20px;
         flex-direction: column;
         gap: 15px;
       }
-      
-      .nav-menu {
-        justify-content: center;
-        gap: 15px;
-      }
-      
-      .hero-title {
+      .hero h1 {
         font-size: 40px;
-        letter-spacing: 4px;
       }
-      
-      .hero-title .line2 {
+      .hero h1 span:last-child {
         font-size: 32px;
       }
-      
-      .timings-box {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 25px;
-      }
-      
       .section-title {
         font-size: 28px;
+      }
+      .timing-card {
+        padding: 10px 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- FIRST PAGE - EXACT MATCH TO REFERENCE IMAGE -->
-  <div class="hero-first-page">
-    <div class="header-top">
-      <div class="logo">
-        <span>GYM</span><span>FIT</span>
-      </div>
-      <div class="nav-menu">
-        <a href="#">HOME</a>
-        <a href="#">ABOUT US</a>
-        <a href="#">OUR TRAINERS</a>
-        <a href="#">CLASSES</a>
-        <a href="#">SHOP</a>
-        <a href="#">PAGES</a>
-        <a href="#">BLOG</a>
-        <a href="#">CONTACT</a>
-      </div>
-    </div>
+<!-- AI-GENERATED BODYBUILDER BACKGROUND - UNIFIED FOR ALL PAGES -->
+<div class="ai-bg"></div>
+<div class="overlay-dark"></div>
 
-    <div class="hero-content-center">
-      <div class="hero-title">
-        <span class="line1">GYMFIT</span>
-        <span class="line2">FITNESS CENTER</span>
-      </div>
-      <div class="hero-description">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        <p>Lorem Ipsum has been the industry's standard dummy text</p>
-      </div>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-contact">CONTACT</a>
-        <a href="#about" class="btn-readmore">READ MORE</a>
-      </div>
+<div class="main-content">
+  <!-- Header Navigation -->
+  <div class="header">
+    <div class="logo">
+      <span>GYM</span><span>FIT</span>
     </div>
+    <div class="nav">
+      <a href="#">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#trainers">TRAINERS</a>
+      <a href="#plans">PLANS</a>
+      <a href="#equipment">EQUIPMENT</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+  </div>
 
-    <div class="timings-section">
-      <div class="timings-box">
-        <div class="timings-item">
-          <i class="far fa-clock"></i>
-          <div class="timings-text">
-            <div class="label">Our Timings</div>
-            <div class="time">8:00am - 5:00pm</div>
-          </div>
-        </div>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>
+      <span>GYMFIT</span>
+      <span>FITNESS CENTER</span>
+    </h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>Lorem Ipsum has been the industry's standard dummy text</p>
+    <div class="buttons">
+      <a href="#contact" class="btn-primary">CONTACT</a>
+      <a href="#about" class="btn-outline">READ MORE</a>
+    </div>
+  </div>
+
+  <!-- Timings Box -->
+  <div class="timings">
+    <div class="timing-card">
+      <i class="far fa-clock"></i>
+      <div>
+        <div class="label">Our Timings</div>
+        <div class="time">8:00am - 5:00pm</div>
       </div>
     </div>
   </div>
 
-  <!-- REST OF THE WEBSITE -->
+  <!-- All Other Sections -->
   <div class="container">
     <!-- About Section -->
-    <div id="about">
+    <div class="card" id="about">
       <h2 class="section-title">ABOUT US</h2>
-      <div class="about-text">
-        <p>Welcome to <strong>GYMFIT Fitness Center</strong>, your ultimate destination for fitness transformation. We provide world-class equipment, expert trainers, and a motivating environment for both men and women. Whether you're a beginner or a professional athlete, we have everything you need to achieve your fitness goals.</p>
-        <p style="margin-top: 20px;">Our mission is to help you build strength, improve endurance, and develop a healthier lifestyle through disciplined training and expert guidance.</p>
-      </div>
+      <p style="text-align: center; line-height: 1.8;">Welcome to <strong>GYMFIT Fitness Center</strong>, your ultimate fitness destination. We provide world-class equipment, expert trainers, and a motivating environment for both men and women. Whether you're a beginner or a professional athlete, we have everything you need to achieve your fitness goals. Our community is built on discipline, support, and transformation.</p>
     </div>
 
     <!-- Membership Plans -->
-    <div style="margin-top: 60px;" id="membership">
+    <div id="plans">
       <h2 class="section-title">MEMBERSHIP PLANS</h2>
       <div class="pricing-grid">
-        <div class="pricing-card">
-          <img class="pricing-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monthly">
-          <div class="pricing-header">
-            <h3>MONTHLY</h3>
-            <div class="price">₹2,000<span>/month</span></div>
-          </div>
-          <ul class="pricing-features">
+        <div class="price-card">
+          <img src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monthly">
+          <h3>MONTHLY</h3>
+          <div class="price">₹2,000<span style="font-size:14px">/month</span></div>
+          <ul>
             <li><i class="fas fa-check-circle"></i> Full Gym Access</li>
             <li><i class="fas fa-check-circle"></i> Cardio & Weight Training</li>
             <li><i class="fas fa-check-circle"></i> Locker Facility</li>
           </ul>
-          <a href="https://wa.me/919608520740?text=Monthly%20membership%20₹2000" class="pricing-btn" target="_blank">JOIN NOW</a>
+          <a href="https://wa.me/919608520740?text=Monthly%20₹2000">JOIN NOW</a>
         </div>
-        <div class="pricing-card">
-          <img class="pricing-img" src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quarterly">
-          <div class="pricing-header">
-            <h3>QUARTERLY <span class="badge">SAVE 33%</span></h3>
-            <div class="price">₹4,000<span>/3 months</span></div>
-          </div>
-          <ul class="pricing-features">
+        <div class="price-card">
+          <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quarterly">
+          <h3>QUARTERLY <span class="badge">SAVE 33%</span></h3>
+          <div class="price">₹4,000<span style="font-size:14px">/3 months</span></div>
+          <ul>
             <li><i class="fas fa-check-circle"></i> Everything in Monthly</li>
             <li><i class="fas fa-check-circle"></i> 1 Free PT Session</li>
             <li><i class="fas fa-check-circle"></i> Body Analysis</li>
           </ul>
-          <a href="https://wa.me/919608520740?text=Quarterly%20membership%20₹4000" class="pricing-btn" target="_blank">JOIN NOW</a>
+          <a href="https://wa.me/919608520740?text=Quarterly%20₹4000">JOIN NOW</a>
         </div>
-        <div class="pricing-card">
-          <img class="pricing-img" src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Half Yearly">
-          <div class="pricing-header">
-            <h3>HALF YEARLY <span class="badge">SAVE 50%</span></h3>
-            <div class="price">₹6,000<span>/6 months</span></div>
-          </div>
-          <ul class="pricing-features">
+        <div class="price-card">
+          <img src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Half Yearly">
+          <h3>HALF YEARLY <span class="badge">SAVE 50%</span></h3>
+          <div class="price">₹6,000<span style="font-size:14px">/6 months</span></div>
+          <ul>
             <li><i class="fas fa-check-circle"></i> Everything in Quarterly</li>
             <li><i class="fas fa-check-circle"></i> 3 Free PT Sessions</li>
             <li><i class="fas fa-check-circle"></i> Diet Plan</li>
           </ul>
-          <a href="https://wa.me/919608520740?text=Half%20Yearly%20membership%20₹6000" class="pricing-btn" target="_blank">JOIN NOW</a>
+          <a href="https://wa.me/919608520740?text=Half%20Yearly%20₹6000">JOIN NOW</a>
         </div>
-        <div class="pricing-card">
-          <img class="pricing-img" src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yearly">
-          <div class="pricing-header">
-            <h3>YEARLY <span class="badge">BEST VALUE</span></h3>
-            <div class="price">₹10,000<span>/year</span></div>
-          </div>
-          <ul class="pricing-features">
+        <div class="price-card">
+          <img src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yearly">
+          <h3>YEARLY <span class="badge">BEST VALUE</span></h3>
+          <div class="price">₹10,000<span style="font-size:14px">/year</span></div>
+          <ul>
             <li><i class="fas fa-check-circle"></i> Everything in Half Yearly</li>
             <li><i class="fas fa-check-circle"></i> Unlimited PT Access</li>
             <li><i class="fas fa-check-circle"></i> Free Gym Kit</li>
           </ul>
-          <a href="https://wa.me/919608520740?text=Yearly%20membership%20₹10000" class="pricing-btn" target="_blank">JOIN NOW</a>
+          <a href="https://wa.me/919608520740?text=Yearly%20₹10000">JOIN NOW</a>
         </div>
       </div>
     </div>
@@ -729,34 +600,26 @@
     <!-- Equipment Section -->
     <div style="margin-top: 60px;" id="equipment">
       <h2 class="section-title">PREMIUM EQUIPMENT</h2>
-      <div class="equipment-gallery">
-        <div class="equipment-card">
-          <img class="equipment-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dumbbells">
-          <div class="equipment-info">
-            <h4><i class="fas fa-dumbbell"></i> Premium Dumbbells</h4>
-            <p>2kg to 50kg | Chrome Plated</p>
-          </div>
+      <div class="equipment-grid">
+        <div class="equip-item">
+          <img src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dumbbells">
+          <h4><i class="fas fa-dumbbell"></i> Premium Dumbbells</h4>
+          <p style="padding-bottom:15px;">2kg to 50kg | Chrome Plated</p>
         </div>
-        <div class="equipment-card">
-          <img class="equipment-img" src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cable Machine">
-          <div class="equipment-info">
-            <h4><i class="fas fa-exchange-alt"></i> Cable Crossover</h4>
-            <p>Dual Pulley System</p>
-          </div>
+        <div class="equip-item">
+          <img src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cable">
+          <h4><i class="fas fa-exchange-alt"></i> Cable Crossover</h4>
+          <p style="padding-bottom:15px;">Dual Pulley System</p>
         </div>
-        <div class="equipment-card">
-          <img class="equipment-img" src="https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Leg Press">
-          <div class="equipment-info">
-            <h4><i class="fas fa-cogs"></i> Leg Press Machine</h4>
-            <p>Plate-Loaded | 500kg Capacity</p>
-          </div>
+        <div class="equip-item">
+          <img src="https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Leg Press">
+          <h4><i class="fas fa-cogs"></i> Leg Press Machine</h4>
+          <p style="padding-bottom:15px;">Plate-Loaded | 500kg Capacity</p>
         </div>
-        <div class="equipment-card">
-          <img class="equipment-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Treadmill">
-          <div class="equipment-info">
-            <h4><i class="fas fa-heartbeat"></i> Commercial Treadmill</h4>
-            <p>HD Screen | 15% Incline</p>
-          </div>
+        <div class="equip-item">
+          <img src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Treadmill">
+          <h4><i class="fas fa-heartbeat"></i> Commercial Treadmill</h4>
+          <p style="padding-bottom:15px;">HD Screen | 15% Incline</p>
         </div>
       </div>
     </div>
@@ -764,46 +627,46 @@
     <!-- Trainers Section -->
     <div style="margin-top: 60px;" id="trainers">
       <h2 class="section-title">OUR TRAINERS</h2>
-      <div class="trainer-grid">
-        <div class="trainer-card">
-          <img class="trainer-img" src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Anjali Singh">
+      <div class="trainers-grid">
+        <div class="trainer">
+          <img src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Anjali">
           <h3>Anjali Singh</h3>
           <p><i class="fas fa-crown"></i> Manager & Head Coach</p>
-          <div class="trainer-badge">8+ Years Experience</div>
-          <p style="margin-top: 15px;">Specialized in Weight Loss, Strength Training & Women's Fitness</p>
+          <div class="exp">8+ Years Experience</div>
+          <p>Specialized in Weight Loss, Strength Training & Women's Fitness</p>
         </div>
-        <div class="trainer-card">
-          <img class="trainer-img" src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sariya">
+        <div class="trainer">
+          <img src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sariya">
           <h3>Sariya</h3>
           <p><i class="fas fa-dumbbell"></i> Senior Strength Coach</p>
-          <div class="trainer-badge">10+ Years Experience</div>
-          <p style="margin-top: 15px;">Expert in Muscle Building, Powerlifting & Advanced Techniques</p>
+          <div class="exp">10+ Years Experience</div>
+          <p>Expert in Muscle Building, Powerlifting & Advanced Techniques</p>
         </div>
       </div>
     </div>
 
-    <!-- Services & Why Choose Us -->
-    <div class="services-grid" style="margin-top: 60px;">
-      <div class="service-card">
-        <h3><i class="fas fa-dumbbell"></i> Our Services</h3>
+    <!-- Services & Why Choose -->
+    <div class="two-col" style="margin-top: 60px;">
+      <div class="card">
+        <h3 style="color:#ff6b00; margin-bottom:20px;"><i class="fas fa-dumbbell"></i> Our Services</h3>
         <div class="service-list">
-          <div class="service-item"><i class="fas fa-weight-hanging"></i> Weight Training</div>
-          <div class="service-item"><i class="fas fa-heartbeat"></i> Cardio Workouts</div>
-          <div class="service-item"><i class="fas fa-user-check"></i> Personal Training</div>
-          <div class="service-item"><i class="fas fa-fire"></i> Fat Loss Programs</div>
-          <div class="service-item"><i class="fas fa-chart-line"></i> Muscle Building</div>
-          <div class="service-item"><i class="fas fa-hands-helping"></i> Yoga & Stretching</div>
+          <span><i class="fas fa-weight-hanging"></i> Weight Training</span>
+          <span><i class="fas fa-heartbeat"></i> Cardio Workouts</span>
+          <span><i class="fas fa-user-check"></i> Personal Training</span>
+          <span><i class="fas fa-fire"></i> Fat Loss Programs</span>
+          <span><i class="fas fa-chart-line"></i> Muscle Building</span>
+          <span><i class="fas fa-hands-helping"></i> Yoga & Stretching</span>
         </div>
       </div>
-      <div class="service-card">
-        <h3><i class="fas fa-star"></i> Why Choose Us?</h3>
-        <div class="service-list">
-          <div class="service-item"><i class="fas fa-female"></i> Men & Women Friendly</div>
-          <div class="service-item"><i class="fas fa-chalkboard-user"></i> Expert Trainers</div>
-          <div class="service-item"><i class="fas fa-rupee-sign"></i> Affordable Plans</div>
-          <div class="service-item"><i class="fas fa-broom"></i> Clean Environment</div>
-          <div class="service-item"><i class="fas fa-clock"></i> Flexible Timings</div>
-          <div class="service-item"><i class="fas fa-hand-fist"></i> Latest Equipment</div>
+      <div class="card">
+        <h3 style="color:#ff6b00; margin-bottom:20px;"><i class="fas fa-star"></i> Why Choose Us?</h3>
+        <div class="why-list">
+          <span><i class="fas fa-female"></i> Men & Women Friendly</span>
+          <span><i class="fas fa-chalkboard-user"></i> Expert Trainers</span>
+          <span><i class="fas fa-rupee-sign"></i> Affordable Plans</span>
+          <span><i class="fas fa-broom"></i> Clean Environment</span>
+          <span><i class="fas fa-clock"></i> Flexible Timings</span>
+          <span><i class="fas fa-hand-fist"></i> Latest Equipment</span>
         </div>
       </div>
     </div>
@@ -812,23 +675,23 @@
     <div style="margin-top: 60px;" id="contact">
       <h2 class="section-title">CONTACT US</h2>
       <div class="contact-grid">
-        <div class="contact-card">
+        <div class="contact-item">
           <i class="fas fa-user-circle"></i>
           <h4>Anjali Singh</h4>
           <p>Manager & Head Coach</p>
         </div>
-        <div class="contact-card">
+        <div class="contact-item">
           <i class="fas fa-user"></i>
           <h4>Sariya</h4>
           <p>Senior Strength Coach</p>
         </div>
-        <div class="contact-card">
+        <div class="contact-item">
           <i class="fas fa-phone-alt"></i>
           <h4>Call / WhatsApp</h4>
-          <p><a href="tel:+919608520740">+91 96085 20740</a></p>
-          <a href="https://wa.me/919608520740?text=Hi%20GYMFIT" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <p><a href="tel:+919608520740" style="color:#ff6b00;">+91 96085 20740</a></p>
+          <a href="https://wa.me/919608520740?text=Hi%20GYMFIT" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
-        <div class="contact-card">
+        <div class="contact-item">
           <i class="fas fa-map-marker-alt"></i>
           <h4>Location</h4>
           <p>Champa Gali, Lane No. 3<br>Saket, Delhi - 110030</p>
@@ -841,19 +704,21 @@
       <p style="margin-top: 10px;">Champa Gali, Saket, Delhi | +91 96085 20740</p>
     </div>
   </div>
+</div>
 
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === "#" || href === "") return;
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+<script>
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href === "#" || href === "") return;
+      const target = document.querySelector(href);
+      if(target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
