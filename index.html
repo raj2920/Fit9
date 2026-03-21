@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>GYMFIT | Ultimate Fitness Center</title>
+  <title>GYMFIT | Transform Your Body, Transform Your Life</title>
   <!-- Google Fonts & Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,7 +100,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 80px 20px 60px;
+      padding: 60px 20px 50px;
       flex: 1;
     }
 
@@ -110,7 +110,7 @@
       font-weight: 800;
       letter-spacing: 8px;
       line-height: 1.2;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
     }
 
@@ -126,9 +126,26 @@
       letter-spacing: 6px;
     }
 
+    /* Quote below name */
+    .transform-quote {
+      font-size: 18px;
+      font-weight: 600;
+      color: #ff6b00;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-family: 'Oswald', sans-serif;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    }
+
+    .transform-quote i {
+      margin: 0 8px;
+      color: #fff;
+    }
+
     .hero-description {
       max-width: 700px;
-      margin: 20px auto;
+      margin: 15px auto;
       color: #ddd;
       font-size: 16px;
       line-height: 1.6;
@@ -142,7 +159,7 @@
       display: flex;
       gap: 20px;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 25px;
       flex-wrap: wrap;
     }
 
@@ -191,7 +208,7 @@
       transform: translateY(-2px);
     }
 
-    /* Timings Section */
+    /* Timings Section - Updated with Morning and Evening */
     .timings-section {
       position: absolute;
       bottom: 40px;
@@ -210,9 +227,9 @@
       text-align: center;
       border-left: 4px solid #ff6b00;
       border-right: 4px solid #ff6b00;
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 40px;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -241,7 +258,7 @@
     }
 
     .timings-text .time {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       color: #fff;
       font-family: 'Oswald', sans-serif;
@@ -300,6 +317,58 @@
     .card-blur:hover {
       border-color: #ff6b00;
       transform: translateY(-5px);
+    }
+
+    /* Google Map Container */
+    .map-container {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 107, 0, 0.5);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      display: block;
+    }
+
+    /* Timings Card */
+    .timings-card {
+      text-align: center;
+    }
+
+    .timing-row {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .timing-slot {
+      background: rgba(255, 107, 0, 0.2);
+      padding: 20px 30px;
+      border-radius: 12px;
+      border-left: 3px solid #ff6b00;
+    }
+
+    .timing-slot i {
+      font-size: 28px;
+      color: #ff6b00;
+      margin-bottom: 10px;
+    }
+
+    .timing-slot h4 {
+      font-size: 20px;
+      color: #ff6b00;
+      margin-bottom: 8px;
+    }
+
+    .timing-slot p {
+      font-size: 18px;
+      font-weight: 600;
     }
 
     /* Pricing Grid */
@@ -645,6 +714,10 @@
         font-size: 32px;
       }
       
+      .transform-quote {
+        font-size: 14px;
+      }
+      
       .timings-box {
         flex-direction: column;
         gap: 15px;
@@ -657,6 +730,12 @@
       
       .container {
         padding: 40px 20px;
+      }
+      
+      .timing-row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
       }
     }
 
@@ -692,6 +771,10 @@
         <span class="line1">GYMFIT</span>
         <span class="line2">FITNESS CENTER</span>
       </div>
+      <!-- Transform Quote Below Name -->
+      <div class="transform-quote">
+        <i class="fas fa-fire"></i> TRANSFORM YOUR BODY · TRANSFORM YOUR LIFE <i class="fas fa-fire"></i>
+      </div>
       <div class="hero-description">
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         <p>Lorem Ipsum has been the industry's standard dummy text</p>
@@ -702,13 +785,21 @@
       </div>
     </div>
 
+    <!-- Timings Section - Updated with Morning and Evening -->
     <div class="timings-section">
       <div class="timings-box">
         <div class="timings-item">
-          <i class="far fa-clock"></i>
+          <i class="fas fa-sun"></i>
           <div class="timings-text">
-            <div class="label">Our Timings</div>
-            <div class="time">8:00am - 5:00pm</div>
+            <div class="label">Morning</div>
+            <div class="time">6:00 AM - 11:00 AM</div>
+          </div>
+        </div>
+        <div class="timings-item">
+          <i class="fas fa-moon"></i>
+          <div class="timings-text">
+            <div class="label">Evening</div>
+            <div class="time">5:00 PM - 10:00 PM</div>
           </div>
         </div>
       </div>
@@ -723,6 +814,47 @@
       <div class="about-text">
         <p>Welcome to <strong>GYMFIT Fitness Center</strong>, your ultimate destination for fitness transformation. We provide world-class equipment, expert trainers, and a motivating environment for both men and women. Whether you're a beginner or a professional athlete, we have everything you need to achieve your fitness goals.</p>
         <p style="margin-top: 20px;">Our mission is to help you build strength, improve endurance, and develop a healthier lifestyle through disciplined training and expert guidance. Join our community of fitness enthusiasts and unleash your true potential.</p>
+      </div>
+    </div>
+
+    <!-- Location with Google Map & Timings -->
+    <div class="card-blur" style="margin-top: 30px;">
+      <h2 class="section-title">OUR LOCATION & TIMINGS</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        <div>
+          <h3 style="color: #ff6b00; margin-bottom: 15px;"><i class="fas fa-map-marker-alt"></i> Find Us Here</h3>
+          <div class="map-container">
+            <!-- Google Map - Champa Gali, Saket, Delhi -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.065319360895!2d77.21424231508113!3d28.487594882475124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce1f2b0a6b5d7%3A0x8a5e5c5e5c5e5c5e!2sChampa%20Gali%2C%20Saket%2C%20New%20Delhi%2C%20Delhi%20110030!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <p style="margin-top: 15px; text-align: center;">
+            <i class="fas fa-location-dot" style="color: #ff6b00;"></i> 
+            Champa Gali, Lane No. 3, Western Marg, Saket, Delhi - 110030
+          </p>
+        </div>
+        <div class="timings-card">
+          <h3 style="color: #ff6b00; margin-bottom: 15px;"><i class="far fa-clock"></i> Gym Timings</h3>
+          <div class="timing-row">
+            <div class="timing-slot">
+              <i class="fas fa-sun"></i>
+              <h4>Morning Session</h4>
+              <p>6:00 AM - 11:00 AM</p>
+            </div>
+            <div class="timing-slot">
+              <i class="fas fa-moon"></i>
+              <h4>Evening Session</h4>
+              <p>5:00 PM - 10:00 PM</p>
+            </div>
+          </div>
+          <p style="margin-top: 20px; color: #ff6b00;">
+            <i class="fas fa-calendar-alt"></i> Open All Days (Monday - Sunday)
+          </p>
+        </div>
       </div>
     </div>
 
@@ -888,9 +1020,9 @@
           <a href="https://wa.me/919608520740?text=Hi%20GYMFIT" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
         <div class="contact-card">
-          <i class="fas fa-map-marker-alt"></i>
-          <h4>Location</h4>
-          <p>Champa Gali, Lane No. 3<br>Saket, Delhi - 110030</p>
+          <i class="fas fa-envelope"></i>
+          <h4>Email</h4>
+          <p><a href="mailto:fit9gym.saket@gmail.com">fit9gym.saket@gmail.com</a></p>
         </div>
       </div>
     </div>
