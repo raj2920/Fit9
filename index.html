@@ -22,51 +22,28 @@
       min-height: 100vh;
     }
 
-    /* ========== AI-GENERATED BODYBUILDER BACKGROUND IMAGE FOR ALL PAGES ========== */
-    /* Premium AI-generated bodybuilder background - high quality image */
-    .global-bg-image {
+    /* ========== FIRST PAGE BACKGROUND USING LOCAL p3.jpeg ========== */
+    .first-page {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.7)), url('p3.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Fallback for other pages - dark background */
+    .global-bg-fallback {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: -2;
-      /* AI Generated Bodybuilder Image - Professional gym background */
-      background-image: url('https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=1600');
-      background-size: cover;
-      background-position: center 30%;
-      background-repeat: no-repeat;
-      transition: all 0.3s ease;
-    }
-    
-    /* Alternative AI-style image - using a powerful bodybuilder aesthetic */
-    /* This creates a premium, AI-generated look with overlay effect */
-    .global-bg-image::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.6) 100%);
-      z-index: 1;
-    }
-    
-    /* Dark overlay for better text contrast */
-    .bg-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.65);
-      z-index: -1;
-    }
-
-    /* Main content wrapper */
-    .main-wrapper {
-      position: relative;
-      z-index: 2;
+      background: #0a0a0a;
     }
 
     /* Header Navigation */
@@ -117,14 +94,6 @@
     }
 
     /* Hero Section */
-    .hero-first-page {
-      position: relative;
-      min-height: 100vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
     .hero-content-center {
       display: flex;
       flex-direction: column;
@@ -283,6 +252,8 @@
       max-width: 1300px;
       margin: 0 auto;
       padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
     }
 
     .section-title {
@@ -651,7 +622,6 @@
       padding: 30px;
       border-top: 1px solid rgba(255, 107, 0, 0.3);
       margin-top: 40px;
-      background: rgba(0, 0, 0, 0.5);
     }
 
     @media (max-width: 768px) {
@@ -698,240 +668,236 @@
 </head>
 <body>
 
-  <!-- ========== AI-GENERATED BODYBUILDER BACKGROUND IMAGE FOR ALL PAGES ========== -->
-  <!-- Premium background image that gives AI-generated bodybuilder aesthetic -->
-  <div class="global-bg-image"></div>
-  <div class="bg-overlay"></div>
+  <!-- Fallback background for other sections -->
+  <div class="global-bg-fallback"></div>
 
-  <div class="main-wrapper">
-    <!-- FIRST PAGE / HERO SECTION -->
-    <div class="hero-first-page">
-      <div class="header-top">
-        <div class="logo">
-          <span>GYM</span><span>FIT</span>
-        </div>
-        <div class="nav-menu">
-          <a href="#">HOME</a>
-          <a href="#about">ABOUT US</a>
-          <a href="#trainers">OUR TRAINERS</a>
-          <a href="#classes">CLASSES</a>
-          <a href="#plans">PLANS</a>
-          <a href="#contact">CONTACT</a>
+  <!-- FIRST PAGE WITH LOCAL p3.jpeg BACKGROUND -->
+  <div class="first-page">
+    <div class="header-top">
+      <div class="logo">
+        <span>GYM</span><span>FIT</span>
+      </div>
+      <div class="nav-menu">
+        <a href="#">HOME</a>
+        <a href="#about">ABOUT US</a>
+        <a href="#trainers">OUR TRAINERS</a>
+        <a href="#classes">CLASSES</a>
+        <a href="#plans">PLANS</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </div>
+
+    <div class="hero-content-center">
+      <div class="hero-title">
+        <span class="line1">GYMFIT</span>
+        <span class="line2">FITNESS CENTER</span>
+      </div>
+      <div class="hero-description">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p>Lorem Ipsum has been the industry's standard dummy text</p>
+      </div>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-contact">CONTACT</a>
+        <a href="#about" class="btn-readmore">READ MORE</a>
+      </div>
+    </div>
+
+    <div class="timings-section">
+      <div class="timings-box">
+        <div class="timings-item">
+          <i class="far fa-clock"></i>
+          <div class="timings-text">
+            <div class="label">Our Timings</div>
+            <div class="time">8:00am - 5:00pm</div>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="hero-content-center">
-        <div class="hero-title">
-          <span class="line1">GYMFIT</span>
-          <span class="line2">FITNESS CENTER</span>
+  <!-- REST OF THE WEBSITE SECTIONS -->
+  <div class="container">
+    <!-- About Section -->
+    <div id="about" class="card-blur">
+      <h2 class="section-title">ABOUT US</h2>
+      <div class="about-text">
+        <p>Welcome to <strong>GYMFIT Fitness Center</strong>, your ultimate destination for fitness transformation. We provide world-class equipment, expert trainers, and a motivating environment for both men and women. Whether you're a beginner or a professional athlete, we have everything you need to achieve your fitness goals.</p>
+        <p style="margin-top: 20px;">Our mission is to help you build strength, improve endurance, and develop a healthier lifestyle through disciplined training and expert guidance. Join our community of fitness enthusiasts and unleash your true potential.</p>
+      </div>
+    </div>
+
+    <!-- Membership Plans -->
+    <div id="plans" style="margin-top: 60px;">
+      <h2 class="section-title">MEMBERSHIP PLANS</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <img class="pricing-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monthly">
+          <div class="pricing-header">
+            <h3>MONTHLY</h3>
+            <div class="price">₹2,000<span>/month</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> Full Gym Access</li>
+            <li><i class="fas fa-check-circle"></i> Cardio & Weight Training</li>
+            <li><i class="fas fa-check-circle"></i> Locker Facility</li>
+          </ul>
+          <a href="https://wa.me/919608520740?text=Monthly%20membership%20₹2000" class="pricing-btn" target="_blank">JOIN NOW</a>
         </div>
-        <div class="hero-description">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-          <p>Lorem Ipsum has been the industry's standard dummy text</p>
+        <div class="pricing-card">
+          <img class="pricing-img" src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quarterly">
+          <div class="pricing-header">
+            <h3>QUARTERLY <span class="badge">SAVE 33%</span></h3>
+            <div class="price">₹4,000<span>/3 months</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> Everything in Monthly</li>
+            <li><i class="fas fa-check-circle"></i> 1 Free PT Session</li>
+            <li><i class="fas fa-check-circle"></i> Body Analysis</li>
+          </ul>
+          <a href="https://wa.me/919608520740?text=Quarterly%20membership%20₹4000" class="pricing-btn" target="_blank">JOIN NOW</a>
         </div>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn-contact">CONTACT</a>
-          <a href="#about" class="btn-readmore">READ MORE</a>
+        <div class="pricing-card">
+          <img class="pricing-img" src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Half Yearly">
+          <div class="pricing-header">
+            <h3>HALF YEARLY <span class="badge">SAVE 50%</span></h3>
+            <div class="price">₹6,000<span>/6 months</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> Everything in Quarterly</li>
+            <li><i class="fas fa-check-circle"></i> 3 Free PT Sessions</li>
+            <li><i class="fas fa-check-circle"></i> Diet Plan</li>
+          </ul>
+          <a href="https://wa.me/919608520740?text=Half%20Yearly%20membership%20₹6000" class="pricing-btn" target="_blank">JOIN NOW</a>
+        </div>
+        <div class="pricing-card">
+          <img class="pricing-img" src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yearly">
+          <div class="pricing-header">
+            <h3>YEARLY <span class="badge">BEST VALUE</span></h3>
+            <div class="price">₹10,000<span>/year</span></div>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> Everything in Half Yearly</li>
+            <li><i class="fas fa-check-circle"></i> Unlimited PT Access</li>
+            <li><i class="fas fa-check-circle"></i> Free Gym Kit</li>
+          </ul>
+          <a href="https://wa.me/919608520740?text=Yearly%20membership%20₹10000" class="pricing-btn" target="_blank">JOIN NOW</a>
         </div>
       </div>
+    </div>
 
-      <div class="timings-section">
-        <div class="timings-box">
-          <div class="timings-item">
-            <i class="far fa-clock"></i>
-            <div class="timings-text">
-              <div class="label">Our Timings</div>
-              <div class="time">8:00am - 5:00pm</div>
-            </div>
+    <!-- Equipment Section -->
+    <div style="margin-top: 60px;" id="equipment">
+      <h2 class="section-title">PREMIUM EQUIPMENT</h2>
+      <div class="equipment-gallery">
+        <div class="equipment-card">
+          <img class="equipment-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dumbbells">
+          <div class="equipment-info">
+            <h4><i class="fas fa-dumbbell"></i> Premium Dumbbells</h4>
+            <p>2kg to 50kg | Chrome Plated | Non-slip grip</p>
+          </div>
+        </div>
+        <div class="equipment-card">
+          <img class="equipment-img" src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cable Machine">
+          <div class="equipment-info">
+            <h4><i class="fas fa-exchange-alt"></i> Cable Crossover</h4>
+            <p>Dual Pulley System | Full body workouts</p>
+          </div>
+        </div>
+        <div class="equipment-card">
+          <img class="equipment-img" src="https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Leg Press">
+          <div class="equipment-info">
+            <h4><i class="fas fa-cogs"></i> Leg Press Machine</h4>
+            <p>Plate-Loaded | 500kg Capacity</p>
+          </div>
+        </div>
+        <div class="equipment-card">
+          <img class="equipment-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Treadmill">
+          <div class="equipment-info">
+            <h4><i class="fas fa-heartbeat"></i> Commercial Treadmill</h4>
+            <p>HD Screen | 15% Incline | Cardio zone</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- REST OF THE WEBSITE - ALL SECTIONS WITH AI BACKGROUND -->
-    <div class="container">
-      <!-- About Section -->
-      <div id="about" class="card-blur">
-        <h2 class="section-title">ABOUT US</h2>
-        <div class="about-text">
-          <p>Welcome to <strong>GYMFIT Fitness Center</strong>, your ultimate destination for fitness transformation. We provide world-class equipment, expert trainers, and a motivating environment for both men and women. Whether you're a beginner or a professional athlete, we have everything you need to achieve your fitness goals.</p>
-          <p style="margin-top: 20px;">Our mission is to help you build strength, improve endurance, and develop a healthier lifestyle through disciplined training and expert guidance. Join our community of fitness enthusiasts and unleash your true potential.</p>
+    <!-- Trainers Section -->
+    <div style="margin-top: 60px;" id="trainers">
+      <h2 class="section-title">OUR TRAINERS</h2>
+      <div class="trainer-grid">
+        <div class="trainer-card">
+          <img class="trainer-img" src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Anjali Singh">
+          <h3>Anjali Singh</h3>
+          <p><i class="fas fa-crown"></i> Manager & Head Coach</p>
+          <div class="trainer-badge">8+ Years Experience</div>
+          <p style="margin-top: 15px;">Specialized in Weight Loss, Strength Training & Women's Fitness</p>
+        </div>
+        <div class="trainer-card">
+          <img class="trainer-img" src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sariya">
+          <h3>Sariya</h3>
+          <p><i class="fas fa-dumbbell"></i> Senior Strength Coach</p>
+          <div class="trainer-badge">10+ Years Experience</div>
+          <p style="margin-top: 15px;">Expert in Muscle Building, Powerlifting & Advanced Techniques</p>
         </div>
       </div>
+    </div>
 
-      <!-- Membership Plans -->
-      <div id="plans" style="margin-top: 60px;">
-        <h2 class="section-title">MEMBERSHIP PLANS</h2>
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <img class="pricing-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monthly">
-            <div class="pricing-header">
-              <h3>MONTHLY</h3>
-              <div class="price">₹2,000<span>/month</span></div>
-            </div>
-            <ul class="pricing-features">
-              <li><i class="fas fa-check-circle"></i> Full Gym Access</li>
-              <li><i class="fas fa-check-circle"></i> Cardio & Weight Training</li>
-              <li><i class="fas fa-check-circle"></i> Locker Facility</li>
-            </ul>
-            <a href="https://wa.me/919608520740?text=Monthly%20membership%20₹2000" class="pricing-btn" target="_blank">JOIN NOW</a>
-          </div>
-          <div class="pricing-card">
-            <img class="pricing-img" src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quarterly">
-            <div class="pricing-header">
-              <h3>QUARTERLY <span class="badge">SAVE 33%</span></h3>
-              <div class="price">₹4,000<span>/3 months</span></div>
-            </div>
-            <ul class="pricing-features">
-              <li><i class="fas fa-check-circle"></i> Everything in Monthly</li>
-              <li><i class="fas fa-check-circle"></i> 1 Free PT Session</li>
-              <li><i class="fas fa-check-circle"></i> Body Analysis</li>
-            </ul>
-            <a href="https://wa.me/919608520740?text=Quarterly%20membership%20₹4000" class="pricing-btn" target="_blank">JOIN NOW</a>
-          </div>
-          <div class="pricing-card">
-            <img class="pricing-img" src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Half Yearly">
-            <div class="pricing-header">
-              <h3>HALF YEARLY <span class="badge">SAVE 50%</span></h3>
-              <div class="price">₹6,000<span>/6 months</span></div>
-            </div>
-            <ul class="pricing-features">
-              <li><i class="fas fa-check-circle"></i> Everything in Quarterly</li>
-              <li><i class="fas fa-check-circle"></i> 3 Free PT Sessions</li>
-              <li><i class="fas fa-check-circle"></i> Diet Plan</li>
-            </ul>
-            <a href="https://wa.me/919608520740?text=Half%20Yearly%20membership%20₹6000" class="pricing-btn" target="_blank">JOIN NOW</a>
-          </div>
-          <div class="pricing-card">
-            <img class="pricing-img" src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yearly">
-            <div class="pricing-header">
-              <h3>YEARLY <span class="badge">BEST VALUE</span></h3>
-              <div class="price">₹10,000<span>/year</span></div>
-            </div>
-            <ul class="pricing-features">
-              <li><i class="fas fa-check-circle"></i> Everything in Half Yearly</li>
-              <li><i class="fas fa-check-circle"></i> Unlimited PT Access</li>
-              <li><i class="fas fa-check-circle"></i> Free Gym Kit</li>
-            </ul>
-            <a href="https://wa.me/919608520740?text=Yearly%20membership%20₹10000" class="pricing-btn" target="_blank">JOIN NOW</a>
-          </div>
+    <!-- Services & Why Choose Us -->
+    <div class="services-grid" style="margin-top: 60px;">
+      <div class="service-card">
+        <h3><i class="fas fa-dumbbell"></i> Our Services</h3>
+        <div class="service-list">
+          <div class="service-item"><i class="fas fa-weight-hanging"></i> Weight Training</div>
+          <div class="service-item"><i class="fas fa-heartbeat"></i> Cardio Workouts</div>
+          <div class="service-item"><i class="fas fa-user-check"></i> Personal Training</div>
+          <div class="service-item"><i class="fas fa-fire"></i> Fat Loss Programs</div>
+          <div class="service-item"><i class="fas fa-chart-line"></i> Muscle Building</div>
+          <div class="service-item"><i class="fas fa-hands-helping"></i> Yoga & Stretching</div>
         </div>
       </div>
+      <div class="service-card">
+        <h3><i class="fas fa-star"></i> Why Choose Us?</h3>
+        <div class="service-list">
+          <div class="service-item"><i class="fas fa-female"></i> Men & Women Friendly</div>
+          <div class="service-item"><i class="fas fa-chalkboard-user"></i> Expert Trainers</div>
+          <div class="service-item"><i class="fas fa-rupee-sign"></i> Affordable Plans</div>
+          <div class="service-item"><i class="fas fa-broom"></i> Clean Environment</div>
+          <div class="service-item"><i class="fas fa-clock"></i> Flexible Timings</div>
+          <div class="service-item"><i class="fas fa-hand-fist"></i> Latest Equipment</div>
+        </div>
+      </div>
+    </div>
 
-      <!-- Equipment Section -->
-      <div style="margin-top: 60px;" id="equipment">
-        <h2 class="section-title">PREMIUM EQUIPMENT</h2>
-        <div class="equipment-gallery">
-          <div class="equipment-card">
-            <img class="equipment-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dumbbells">
-            <div class="equipment-info">
-              <h4><i class="fas fa-dumbbell"></i> Premium Dumbbells</h4>
-              <p>2kg to 50kg | Chrome Plated | Non-slip grip</p>
-            </div>
-          </div>
-          <div class="equipment-card">
-            <img class="equipment-img" src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cable Machine">
-            <div class="equipment-info">
-              <h4><i class="fas fa-exchange-alt"></i> Cable Crossover</h4>
-              <p>Dual Pulley System | Full body workouts</p>
-            </div>
-          </div>
-          <div class="equipment-card">
-            <img class="equipment-img" src="https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Leg Press">
-            <div class="equipment-info">
-              <h4><i class="fas fa-cogs"></i> Leg Press Machine</h4>
-              <p>Plate-Loaded | 500kg Capacity</p>
-            </div>
-          </div>
-          <div class="equipment-card">
-            <img class="equipment-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Treadmill">
-            <div class="equipment-info">
-              <h4><i class="fas fa-heartbeat"></i> Commercial Treadmill</h4>
-              <p>HD Screen | 15% Incline | Cardio zone</p>
-            </div>
-          </div>
+    <!-- Contact Section -->
+    <div style="margin-top: 60px;" id="contact">
+      <h2 class="section-title">CONTACT US</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="fas fa-user-circle"></i>
+          <h4>Anjali Singh</h4>
+          <p>Manager & Head Coach</p>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-user"></i>
+          <h4>Sariya</h4>
+          <p>Senior Strength Coach</p>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-phone-alt"></i>
+          <h4>Call / WhatsApp</h4>
+          <p><a href="tel:+919608520740">+91 96085 20740</a></p>
+          <a href="https://wa.me/919608520740?text=Hi%20GYMFIT" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>Location</h4>
+          <p>Champa Gali, Lane No. 3<br>Saket, Delhi - 110030</p>
         </div>
       </div>
+    </div>
 
-      <!-- Trainers Section -->
-      <div style="margin-top: 60px;" id="trainers">
-        <h2 class="section-title">OUR TRAINERS</h2>
-        <div class="trainer-grid">
-          <div class="trainer-card">
-            <img class="trainer-img" src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Anjali Singh">
-            <h3>Anjali Singh</h3>
-            <p><i class="fas fa-crown"></i> Manager & Head Coach</p>
-            <div class="trainer-badge">8+ Years Experience</div>
-            <p style="margin-top: 15px;">Specialized in Weight Loss, Strength Training & Women's Fitness</p>
-          </div>
-          <div class="trainer-card">
-            <img class="trainer-img" src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sariya">
-            <h3>Sariya</h3>
-            <p><i class="fas fa-dumbbell"></i> Senior Strength Coach</p>
-            <div class="trainer-badge">10+ Years Experience</div>
-            <p style="margin-top: 15px;">Expert in Muscle Building, Powerlifting & Advanced Techniques</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Services & Why Choose Us -->
-      <div class="services-grid" style="margin-top: 60px;">
-        <div class="service-card">
-          <h3><i class="fas fa-dumbbell"></i> Our Services</h3>
-          <div class="service-list">
-            <div class="service-item"><i class="fas fa-weight-hanging"></i> Weight Training</div>
-            <div class="service-item"><i class="fas fa-heartbeat"></i> Cardio Workouts</div>
-            <div class="service-item"><i class="fas fa-user-check"></i> Personal Training</div>
-            <div class="service-item"><i class="fas fa-fire"></i> Fat Loss Programs</div>
-            <div class="service-item"><i class="fas fa-chart-line"></i> Muscle Building</div>
-            <div class="service-item"><i class="fas fa-hands-helping"></i> Yoga & Stretching</div>
-          </div>
-        </div>
-        <div class="service-card">
-          <h3><i class="fas fa-star"></i> Why Choose Us?</h3>
-          <div class="service-list">
-            <div class="service-item"><i class="fas fa-female"></i> Men & Women Friendly</div>
-            <div class="service-item"><i class="fas fa-chalkboard-user"></i> Expert Trainers</div>
-            <div class="service-item"><i class="fas fa-rupee-sign"></i> Affordable Plans</div>
-            <div class="service-item"><i class="fas fa-broom"></i> Clean Environment</div>
-            <div class="service-item"><i class="fas fa-clock"></i> Flexible Timings</div>
-            <div class="service-item"><i class="fas fa-hand-fist"></i> Latest Equipment</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact Section -->
-      <div style="margin-top: 60px;" id="contact">
-        <h2 class="section-title">CONTACT US</h2>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <i class="fas fa-user-circle"></i>
-            <h4>Anjali Singh</h4>
-            <p>Manager & Head Coach</p>
-          </div>
-          <div class="contact-card">
-            <i class="fas fa-user"></i>
-            <h4>Sariya</h4>
-            <p>Senior Strength Coach</p>
-          </div>
-          <div class="contact-card">
-            <i class="fas fa-phone-alt"></i>
-            <h4>Call / WhatsApp</h4>
-            <p><a href="tel:+919608520740">+91 96085 20740</a></p>
-            <a href="https://wa.me/919608520740?text=Hi%20GYMFIT" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          </div>
-          <div class="contact-card">
-            <i class="fas fa-map-marker-alt"></i>
-            <h4>Location</h4>
-            <p>Champa Gali, Lane No. 3<br>Saket, Delhi - 110030</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer">
-        <p>© 2025 GYMFIT Fitness Center — Transform Your Body, Transform Your Life</p>
-        <p style="margin-top: 10px;">Champa Gali, Saket, Delhi | +91 96085 20740 | AI-Powered Strength</p>
-      </div>
+    <div class="footer">
+      <p>© 2025 GYMFIT Fitness Center — Transform Your Body, Transform Your Life</p>
+      <p style="margin-top: 10px;">Champa Gali, Saket, Delhi | +91 96085 20740</p>
     </div>
   </div>
 
