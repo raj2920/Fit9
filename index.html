@@ -20,10 +20,10 @@
       font-family: 'Open Sans', sans-serif;
       color: #fff;
       min-height: 100vh;
-      background: #0a0a0a; /* fallback dark */
+      background: #0a0a0a;
     }
 
-    /* ========== GLOBAL BACKGROUND IMAGE (bg.jpeg) applied to body overlay ========== */
+    /* ========== GLOBAL BACKGROUND IMAGE (p3.jpeg) applied to ALL PAGES ========== */
     body::before {
       content: "";
       position: fixed;
@@ -31,12 +31,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('bg.jpeg') center center / cover no-repeat fixed;
+      background: url('p3.jpeg') center center / cover no-repeat fixed;
       z-index: -2;
-      opacity: 0.85;
+      opacity: 0.9;
     }
 
-    /* dark overlay to ensure readability */
     body::after {
       content: "";
       position: fixed;
@@ -44,29 +43,19 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.7);
       z-index: -1;
     }
 
-    /* First page hero still uses p3.jpeg but we blend it beautifully with overlay, 
-       but we keep the same first-page class background to override only that section 
-       but allow body background to be consistent for rest? Actually we want first page to show p3.jpeg distinct,
-       so we'll keep .first-page background and body background coexists. Body background is fixed, 
-       but .first-page will have its own background image and overlay to stand out. 
-       To make transition smooth, we keep both. Body background will be visible on other sections. */
+    /* First page now uses same global background, no separate image needed */
     .first-page {
       position: relative;
       min-height: 100vh;
       width: 100%;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('p3.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
     }
 
-    /* For other sections we use semi-transparent containers over global bg */
     .container {
       max-width: 1300px;
       margin: 0 auto;
@@ -76,7 +65,6 @@
       border-radius: 0;
     }
 
-    /* Header Navigation */
     .header-top {
       padding: 20px 60px;
       display: flex;
@@ -134,7 +122,6 @@
       color: #ff6b00;
     }
 
-    /* Hero Section */
     .hero-content-center {
       display: flex;
       flex-direction: column;
@@ -259,7 +246,6 @@
       transform: translateY(-2px);
     }
 
-    /* Timings Section */
     .timings-section {
       position: absolute;
       bottom: 40px;
@@ -315,7 +301,6 @@
       font-family: 'Oswald', sans-serif;
     }
 
-    /* Cards with blur effect */
     .card-blur {
       background: rgba(0, 0, 0, 0.65);
       backdrop-filter: blur(6px);
@@ -361,7 +346,6 @@
       color: #f0f0f0;
     }
 
-    /* Map Container */
     .map-container {
       border-radius: 16px;
       overflow: hidden;
@@ -395,7 +379,6 @@
       border-left: 3px solid #ff6b00;
     }
 
-    /* Pricing Grid */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -432,7 +415,7 @@
 
     .pricing-img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
     }
 
@@ -507,7 +490,6 @@
       font-weight: bold;
     }
 
-    /* Equipment Gallery */
     .equipment-gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -546,7 +528,6 @@
       margin-bottom: 8px;
     }
 
-    /* Gallery Grid */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -578,7 +559,6 @@
       transition: transform 0.3s;
     }
 
-    /* Lightbox Modal */
     .lightbox {
       display: none;
       position: fixed;
@@ -605,7 +585,6 @@
       display: flex;
     }
 
-    /* Trainer */
     .trainer-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -649,7 +628,6 @@
       margin-top: 10px;
     }
 
-    /* Services Grid */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -693,7 +671,6 @@
       width: calc(50% - 8px);
     }
 
-    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -766,7 +743,6 @@
 </head>
 <body>
 
-  <!-- FIRST PAGE WITH LOCAL p3.jpeg BACKGROUND -->
   <div class="first-page">
     <div class="header-top">
       <div class="logo">
@@ -805,37 +781,16 @@
       </div>
     </div>
 
-    <!-- Timings Section -->
     <div class="timings-section">
       <div class="timings-box">
-        <div class="timings-item">
-          <i class="fas fa-sun"></i>
-          <div class="timings-text">
-            <div class="label">Morning</div>
-            <div class="time">6:00 AM - 11:00 AM</div>
-          </div>
-        </div>
-        <div class="timings-item">
-          <i class="fas fa-moon"></i>
-          <div class="timings-text">
-            <div class="label">Evening</div>
-            <div class="time">5:00 PM - 10:00 PM</div>
-          </div>
-        </div>
-        <div class="timings-item">
-          <i class="fas fa-heartbeat"></i>
-          <div class="timings-text">
-            <div class="label">Group Classes</div>
-            <div class="time">Zumba · Aerobic · Yoga · Dance</div>
-          </div>
-        </div>
+        <div class="timings-item"><i class="fas fa-sun"></i><div class="timings-text"><div class="label">Morning</div><div class="time">6:00 AM - 11:00 AM</div></div></div>
+        <div class="timings-item"><i class="fas fa-moon"></i><div class="timings-text"><div class="label">Evening</div><div class="time">5:00 PM - 10:00 PM</div></div></div>
+        <div class="timings-item"><i class="fas fa-heartbeat"></i><div class="timings-text"><div class="label">Group Classes</div><div class="time">Zumba · Aerobic · Yoga · Dance</div></div></div>
       </div>
     </div>
   </div>
 
-  <!-- REST OF THE WEBSITE SECTIONS with global bg -->
   <div class="container">
-    <!-- About Section -->
     <div id="about" class="card-blur">
       <h2 class="section-title">ABOUT FIT 9 FITNESS POINT</h2>
       <div class="about-text">
@@ -844,7 +799,6 @@
       </div>
     </div>
 
-    <!-- Location with Google Map & Timings -->
     <div class="card-blur" style="margin-top: 30px;">
       <h2 class="section-title">OUR LOCATION & TIMINGS</h2>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
@@ -867,32 +821,32 @@
       </div>
     </div>
 
-    <!-- Membership Plans with updated half yearly & yearly equipment photos -->
+    <!-- MEMBERSHIP PLANS SECTION - ONLY EQUIPMENT PHOTOS FOR HALF YEARLY & YEARLY -->
     <div id="plans" style="margin-top: 60px;">
       <h2 class="section-title">MEMBERSHIP PLANS</h2>
       <div class="pricing-grid">
         <div class="pricing-card">
-          <img class="pricing-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monthly">
+          <img class="pricing-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Monthly Plan">
           <div class="pricing-header"><h3>MONTHLY</h3><div class="price">₹2,000<span>/month</span></div></div>
           <ul class="pricing-features"><li><i class="fas fa-check-circle"></i> Full Gym Access</li><li><i class="fas fa-check-circle"></i> 2 Group Classes/Week</li><li><i class="fas fa-check-circle"></i> Locker Facility</li></ul>
           <a href="https://wa.me/919911100021?text=Monthly%20membership%20₹2000%20(Fit%209)" class="pricing-btn" target="_blank">JOIN NOW</a>
         </div>
         <div class="pricing-card">
-          <img class="pricing-img" src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quarterly">
+          <img class="pricing-img" src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Quarterly Plan">
           <div class="pricing-header"><h3>QUARTERLY <span class="badge">SAVE 33%</span></h3><div class="price">₹4,000<span>/3 months</span></div></div>
           <ul class="pricing-features"><li><i class="fas fa-check-circle"></i> Everything in Monthly</li><li><i class="fas fa-check-circle"></i> 1 Free PT Session</li><li><i class="fas fa-check-circle"></i> All Group Classes</li></ul>
           <a href="https://wa.me/919911100021?text=Quarterly%20membership%20₹4000" class="pricing-btn" target="_blank">JOIN NOW</a>
         </div>
-        <!-- HALF YEARLY updated with equipment image (dumbbell/gear) -->
+        <!-- HALF YEARLY - EQUIPMENT PHOTO: DUMBBELL RACK / BICEPS EQUIPMENT -->
         <div class="pricing-card">
-          <img class="pricing-img" src="https://images.pexels.com/photos/4164767/pexels-photo-4164767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Half Yearly Equipment">
+          <img class="pricing-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Half Yearly - Dumbbell Equipment">
           <div class="pricing-header"><h3>HALF YEARLY <span class="badge">SAVE 50%</span></h3><div class="price">₹6,000<span>/6 months</span></div></div>
           <ul class="pricing-features"><li><i class="fas fa-check-circle"></i> Everything in Quarterly</li><li><i class="fas fa-check-circle"></i> 3 Free PT Sessions</li><li><i class="fas fa-check-circle"></i> Diet Plan + Wellness Kit</li></ul>
           <a href="https://wa.me/919911100021?text=Half%20Yearly%20membership%20₹6000" class="pricing-btn" target="_blank">JOIN NOW</a>
         </div>
-        <!-- YEARLY updated with high-end equipment image (cable machine) -->
+        <!-- YEARLY - EQUIPMENT PHOTO: CHEST BENCH PRESS / SMITH MACHINE -->
         <div class="pricing-card">
-          <img class="pricing-img" src="https://images.pexels.com/photos/3757951/pexels-photo-3757951.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yearly Premium Equipment">
+          <img class="pricing-img" src="https://images.pexels.com/photos/4168091/pexels-photo-4168091.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Yearly - Bench Press Equipment">
           <div class="pricing-header"><h3>YEARLY <span class="badge">BEST VALUE</span></h3><div class="price">₹10,000<span>/year</span></div></div>
           <ul class="pricing-features"><li><i class="fas fa-check-circle"></i> Everything in Half Yearly</li><li><i class="fas fa-check-circle"></i> Unlimited PT & Classes</li><li><i class="fas fa-check-circle"></i> 2 Months Extra</li></ul>
           <a href="https://wa.me/919911100021?text=Yearly%20membership%20₹10000" class="pricing-btn" target="_blank">JOIN NOW</a>
@@ -900,7 +854,6 @@
       </div>
     </div>
 
-    <!-- Services Section -->
     <div id="classes" style="margin-top: 60px;">
       <h2 class="section-title">OUR FITNESS CLASSES</h2>
       <div class="services-grid">
@@ -909,16 +862,12 @@
       </div>
     </div>
 
-    <!-- GALLERY SECTION -->
     <div id="gallery" style="margin-top: 60px;"><h2 class="section-title">OUR GALLERY</h2><div class="gallery-grid" id="galleryGrid"></div></div>
 
-    <!-- Equipment Section -->
     <div style="margin-top: 60px;" id="equipment"><h2 class="section-title">PREMIUM EQUIPMENT</h2><div class="equipment-gallery"><div class="equipment-card"><img class="equipment-img" src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Treadmill"><div class="equipment-info"><h4>Commercial Treadmill</h4><p>HD Touch | 15% Incline | Cardio Zone</p></div></div><div class="equipment-card"><img class="equipment-img" src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cable"><div class="equipment-info"><h4>Cable Crossover</h4><p>Dual Adjustable Pulleys | Full Body</p></div></div><div class="equipment-card"><img class="equipment-img" src="https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Leg Press"><div class="equipment-info"><h4>Leg Press Machine</h4><p>Plate-Loaded | 500kg Capacity</p></div></div><div class="equipment-card"><img class="equipment-img" src="https://images.pexels.com/photos/949126/pexels-photo-949126.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dumbbells"><div class="equipment-info"><h4>Premium Dumbbell Set</h4><p>2kg to 50kg | Ergonomic Grip</p></div></div><div class="equipment-card"><img class="equipment-img" src="https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pec Deck"><div class="equipment-info"><h4>Pec Deck Fly Machine</h4><p>Chest Isolation | Adjustable Arms</p></div></div><div class="equipment-card"><img class="equipment-img" src="https://images.pexels.com/photos/3757946/pexels-photo-3757946.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Preacher Curl"><div class="equipment-info"><h4>Preacher Curl Station</h4><p>Ultimate Bicep Peak | EZ-Bar Compatible</p></div></div></div></div>
 
-    <!-- Trainers -->
     <div style="margin-top: 60px;" id="trainers"><h2 class="section-title">OUR TRAINERS</h2><div class="trainer-grid"><div class="trainer-card"><img class="trainer-img" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anjani Singh"><h3>Anjani Singh</h3><p><i class="fas fa-crown"></i> Manager & Head Coach | Zumba · Aerobic</p><div class="trainer-badge">10+ Years Experience</div><p style="margin-top:15px;">Specialized in Weight Loss, Zumba & Women's Fitness</p></div><div class="trainer-card"><img class="trainer-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Sheelendra Kumar"><h3>Sheelendra Kumar</h3><p><i class="fas fa-dumbbell"></i> Trainer & Yoga Coach</p><div class="trainer-badge">8+ Years Experience</div><p style="margin-top:15px;">Expert in Muscle Building, Powerlifting & Yoga</p></div></div></div>
 
-    <!-- Contact -->
     <div style="margin-top: 60px;" id="contact"><h2 class="section-title">CONTACT FIT 9 FITNESS POINT</h2><div class="contact-grid"><div class="contact-card"><i class="fas fa-user-circle"></i><h4>Anjani Singh</h4><p>Manager & Head Coach</p></div><div class="contact-card"><i class="fas fa-user"></i><h4>Sheelendra Kumar</h4><p>Trainer & Yoga Coach</p></div><div class="contact-card"><i class="fas fa-phone-alt"></i><h4>Call / WhatsApp</h4><p><a href="tel:+919911100021">+91 99111 00021</a></p><a href="https://wa.me/919911100021?text=Hi%20Fit%209" class="btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Now</a></div><div class="contact-card"><i class="fas fa-envelope"></i><h4>Email</h4><p><a href="mailto:fit9fitnesspoint@gmail.com">fit9fitnesspoint@gmail.com</a></p></div></div></div>
     <div class="footer"><p><strong>Fit 9 Fitness Point – Unisex Gym & Wellness Studio</strong> | Zumba · Aerobic · Yoga · Dance</p><p>Champa Gali, Saket, Delhi | +91 99111 00021 | Open Daily: 6AM-11AM & 5PM-10PM</p><p><i class="fas fa-female"></i> <i class="fas fa-male"></i> Everyone is Welcome | Transform Your Body, Transform Your Life</p></div>
   </div>
